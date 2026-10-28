@@ -1,0 +1,23 @@
+{
+  "source": "tcs.opsresolve.fsm",
+  "detail-type": "Work Order Completed",
+  "detail": {
+    "eventId": "evt-wo-01",
+    "eventVersion": "1.0",
+    "occurredAt": "2026-10-20T16:05:00Z",
+    "caseId": "SR-2026-000184",
+    "correlationId": "corr-8a9f2c1e",
+    "actor": {
+      "type": "SYSTEM",
+      "id": "mock-fsm"
+    },
+    "payload": {
+      "workOrderId": "WO-77120",
+      "technicianId": "TECH-311",
+      "partsUsed": [
+        "CTRL-BRD-500"
+      ],
+      "debrief": "Replaced control board; variance 0.05 after restart; tested 20 min."
+    }
+  }
+}

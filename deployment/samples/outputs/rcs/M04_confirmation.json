@@ -1,0 +1,37 @@
+{
+  "Content": {
+    "RichCard": {
+      "CardContent": {
+        "Title": "Booked: Tue 20 Oct, 14:00",
+        "Description": "R. Kumar will arrive between 14:00 and 14:15 with the replacement control board. Work order WO-77120.",
+        "Suggestions": [
+          {
+            "CreateCalendarEvent": {
+              "Text": "Add to calendar",
+              "PostbackData": "opsr1|SR-2026-000184|CAL|-|...",
+              "Title": "Chiller service visit (WO-77120)",
+              "StartTime": "2026-10-20T14:00:00Z",
+              "EndTime": "2026-10-20T16:00:00Z",
+              "Description": "CX-500 control board replacement"
+            }
+          },
+          {
+            "ShowLocation": {
+              "Text": "Site location",
+              "PostbackData": "opsr1|SR-2026-000184|LOC|-|...",
+              "Latitude": 13.0827,
+              "Longitude": 80.2707,
+              "Label": "Plant A, Gate 2"
+            }
+          },
+          {
+            "Reply": {
+              "Text": "Reschedule",
+              "PostbackData": "opsr1|SR-2026-000184|RESCHEDULE|-|1792499400|x-|281538bee95a2595537d1cfe7080b323"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

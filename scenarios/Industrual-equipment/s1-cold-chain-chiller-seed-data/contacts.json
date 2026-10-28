@@ -1,0 +1,57 @@
+[
+  {
+    "contactId": "CON-77",
+    "customerId": "CUST-1042",
+    "siteId": "PLANT-A",
+    "name": "Anita Rao",
+    "role": "Maintenance Manager",
+    "phone": "+12025550143",
+    "email": "anita.rao@meravixfoods.example",
+    "preferredChannel": "RCS",
+    "consent": {
+      "RCS": "OPTED_IN",
+      "SMS": "OPTED_IN",
+      "WHATSAPP": "OPTED_IN",
+      "EMAIL": "OPTED_IN"
+    },
+    "preConsentBestAvailableTech": false,
+    "isPrimary": true
+  },
+  {
+    "contactId": "CON-78",
+    "customerId": "CUST-1042",
+    "siteId": "PLANT-A",
+    "name": "Vikram Shah",
+    "role": "Plant Manager",
+    "phone": "+12025550144",
+    "email": "vikram.shah@meravixfoods.example",
+    "preferredChannel": "SMS",
+    "consent": {
+      "RCS": "UNKNOWN",
+      "SMS": "OPTED_IN",
+      "WHATSAPP": "UNKNOWN",
+      "EMAIL": "OPTED_IN"
+    },
+    "notifyOn": [
+      "P1"
+    ],
+    "isPrimary": false
+  },
+  {
+    "contactId": "CON-79",
+    "customerId": "CUST-1042",
+    "siteId": "PLANT-A",
+    "name": "Farah Ali",
+    "role": "Finance",
+    "phone": "+12025550145",
+    "email": "farah.ali@meravixfoods.example",
+    "preferredChannel": "EMAIL",
+    "consent": {
+      "RCS": "OPTED_OUT",
+      "SMS": "OPTED_OUT",
+      "WHATSAPP": "UNKNOWN",
+      "EMAIL": "OPTED_IN"
+    },
+    "isPrimary": false
+  }
+]

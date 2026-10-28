@@ -1,0 +1,10 @@
+{
+  "_note": "Decrypted request body shape for the Dynamic Flow data exchange; confirm the envelope/encryption contract against the AWS End User Messaging Social Dynamic Flows documentation.",
+  "version": "3.0",
+  "action": "data_exchange",
+  "screen": "PICK_SLOT",
+  "flow_token": "flow-SR-2026-000207-7f3a",
+  "data": {
+    "date": "2026-10-21"
+  }
+}

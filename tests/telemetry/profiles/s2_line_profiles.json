@@ -1,0 +1,22 @@
+{
+  "ONT-55012": {
+    "faulty": {
+      "opticalRxDbm": -27.9,
+      "fecErrorsPerMin": 820,
+      "resetsLast24h": 14,
+      "syncState": "FLAPPING"
+    },
+    "post_reboot_partial": {
+      "opticalRxDbm": -26.4,
+      "fecErrorsPerMin": 310,
+      "resetsLast24h": 15,
+      "syncState": "UP_UNSTABLE"
+    },
+    "post_swap_normal": {
+      "opticalRxDbm": -18.2,
+      "fecErrorsPerMin": 0,
+      "resetsLast24h": 0,
+      "syncState": "UP"
+    }
+  }
+}

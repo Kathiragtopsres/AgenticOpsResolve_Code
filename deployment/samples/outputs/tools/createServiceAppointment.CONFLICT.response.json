@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "CONFLICT_STATE",
+    "retryable": false,
+    "message": "Case is not in PLANNING_FIELD",
+    "details": {
+      "state": "SCHEDULED"
+    }
+  }
+}

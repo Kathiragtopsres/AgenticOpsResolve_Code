@@ -1,0 +1,19 @@
+[
+  {
+    "depotId": "DEP-CHN-01",
+    "name": "Chennai Depot",
+    "lat": 13.0569,
+    "lon": 80.2425,
+    "region": "SOUTH"
+  },
+  {
+    "depotId": "DEP-BLR-01",
+    "name": "Bengaluru Depot",
+    "lat": 12.9716,
+    "lon": 77.5946,
+    "region": "SOUTH",
+    "transferHoursTo": {
+      "DEP-CHN-01": 6
+    }
+  }
+]

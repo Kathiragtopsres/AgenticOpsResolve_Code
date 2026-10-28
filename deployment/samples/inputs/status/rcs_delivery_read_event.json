@@ -1,0 +1,15 @@
+{
+  "eventType": "TEXT_DELIVERED",
+  "eventVersion": "1.0",
+  "eventTimestamp": 1792492931000,
+  "isFinal": true,
+  "originationPhoneNumber": "rcs-a1b2c3d4",
+  "destinationPhoneNumber": "+12025550143",
+  "messageId": "[messageId]",
+  "messageStatus": "READ",
+  "messageStatusDescription": "Message has been read by recipient",
+  "context": {
+    "caseId": "SR-2026-000184",
+    "intent": "APPOINTMENT_OPTIONS"
+  }
+}

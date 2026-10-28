@@ -1,0 +1,9 @@
+{
+  "caseId": "SR-2026-000184",
+  "assetName": "CHILLER-8821 (CX-500)",
+  "siteName": "Plant A",
+  "resolution": "Replaced compressor control board CTRL-BRD-500; pressure variance normal (0.05)",
+  "engineer": "S. Menon",
+  "slaOutcome": "Repaired before predicted failure; restore-by met after proactive recovery",
+  "reportUrl": "https://[presigned-url]"
+}

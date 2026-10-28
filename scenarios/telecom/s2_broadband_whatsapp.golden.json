@@ -1,0 +1,176 @@
+{
+  "scenario": "S2",
+  "caseId": "SR-2026-000207",
+  "expectedStates": [
+    "OPEN",
+    "CONTEXT_READY",
+    "DIAGNOSING",
+    "AWAITING_CUSTOMER",
+    "DIAGNOSING",
+    "REMOTE_FIX_IN_PROGRESS",
+    "PLANNING_FIELD",
+    "SCHEDULED",
+    "AT_RISK",
+    "SCHEDULED",
+    "IN_SERVICE",
+    "VERIFYING",
+    "CLOSED"
+  ],
+  "expectedSteps": [
+    {
+      "n": 1,
+      "trigger": "samples/inputs/whatsapp/inbound_text_internet_dropping.json",
+      "expect": {
+        "event": "Case Opened",
+        "channel": "WHATSAPP"
+      }
+    },
+    {
+      "n": 2,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "CLARIFY"
+      },
+      "channels": [
+        "WHATSAPP"
+      ],
+      "expectPayload": [
+        "samples/outputs/whatsapp/session_ack.json",
+        "samples/outputs/whatsapp/clarify_buttons.json"
+      ],
+      "wait": "CUSTOMER"
+    },
+    {
+      "n": 3,
+      "trigger": "samples/inputs/whatsapp/inbound_button_reply_lights.json"
+    },
+    {
+      "n": 4,
+      "tool": "getAssetHealth",
+      "args": {
+        "assetId": "ONT-55012"
+      },
+      "expect": {
+        "syncState": "FLAPPING"
+      }
+    },
+    {
+      "n": 5,
+      "tool": "executeSafeRemoteAction",
+      "args": {
+        "action": "ONT_REBOOT"
+      },
+      "policy": "PERMIT",
+      "expect": {
+        "syncState": "UP_UNSTABLE"
+      }
+    },
+    {
+      "n": 6,
+      "tool": "findAndReservePart",
+      "args": {
+        "mode": "HOLD",
+        "partId": "ONT-X200"
+      }
+    },
+    {
+      "n": 7,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "APPOINTMENT_OPTIONS"
+      },
+      "channels": [
+        "WHATSAPP"
+      ],
+      "expectPayload": "samples/outputs/whatsapp/template_booking_flow.json"
+    },
+    {
+      "n": 8,
+      "trigger": "samples/inputs/whatsapp/flow_endpoint_request_slots.json",
+      "expectResponse": "samples/outputs/whatsapp/flow_endpoint_response_slots.json",
+      "latencyP95Ms": 1500
+    },
+    {
+      "n": 9,
+      "trigger": "samples/inputs/whatsapp/flow_submission.json"
+    },
+    {
+      "n": 10,
+      "tool": "createServiceAppointment",
+      "args": {
+        "slotId": "SLT-W1",
+        "technicianId": "TEL-801"
+      }
+    },
+    {
+      "n": 11,
+      "trigger": "samples/inputs/eventbridge/part_pick_failed.json",
+      "expect": {
+        "state": "AT_RISK"
+      }
+    },
+    {
+      "n": 12,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "RECOVERY_OFFER"
+      },
+      "channels": [
+        "WHATSAPP"
+      ],
+      "expectPayload": "samples/outputs/whatsapp/recovery_choice.json",
+      "wait": "CUSTOMER"
+    },
+    {
+      "n": 13,
+      "trigger": "samples/inputs/whatsapp/inbound_recovery_choice_courier.json"
+    },
+    {
+      "n": 14,
+      "tool": "findAndReservePart",
+      "args": {
+        "depotId": "HUB-CHN-C1",
+        "mode": "CONFIRM"
+      }
+    },
+    {
+      "n": 15,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "ETA_UPDATE"
+      },
+      "channels": [
+        "SMS"
+      ],
+      "expectPayload": "samples/outputs/sms/messages.json#SMS-COURIER"
+    },
+    {
+      "n": 16,
+      "tool": "getAssetHealth",
+      "expect": {
+        "syncState": "UP"
+      }
+    },
+    {
+      "n": 17,
+      "tool": "applyServiceCredit",
+      "policy": "PERMIT (amount <= cap)"
+    },
+    {
+      "n": 18,
+      "tool": "closeServiceCase",
+      "policy": "PERMIT"
+    }
+  ],
+  "expectedKpis": {
+    "customerTaps": "<= 8",
+    "callsRequired": 0,
+    "channelsUsed": [
+      "WHATSAPP",
+      "SMS",
+      "EMAIL"
+    ],
+    "resolutionPathChanged": "FIELD_VISIT -> COURIER_SELF_INSTALL"
+  },
+  "matching": "Steps must occur in order; tool arguments compared on listed keys only; timestamps compared as durations under the demo clock."
+}

@@ -1,0 +1,21 @@
+scenario: S2
+reset: true
+featureFlags: {WHATSAPP_ENABLED: true}
+seed: seed/s2-broadband-whatsapp
+steps:
+  - injectInbound: samples/inputs/whatsapp/inbound_text_internet_dropping.json
+  - waitFor: {outbound: {channel: WHATSAPP, intent: CLARIFY}, timeoutSec: 8}
+  - injectInbound: samples/inputs/whatsapp/inbound_button_reply_lights.json
+  - setLineProfile: {asset: ONT-55012, profile: post_reboot_partial}
+  - waitFor: {outbound: {channel: WHATSAPP, template: opsr_appointment_flow}}
+  - callFlowEndpoint: samples/inputs/whatsapp/flow_endpoint_request_slots.json
+  - assertResponseMatches: samples/outputs/whatsapp/flow_endpoint_response_slots.json
+  - injectFlowSubmission: samples/inputs/whatsapp/flow_submission.json
+  - assertState: SCHEDULED
+  - publish: samples/inputs/eventbridge/part_pick_failed.json
+  - waitFor: {outbound: {channel: WHATSAPP, intent: RECOVERY_OFFER}}
+  - injectInbound: samples/inputs/whatsapp/inbound_recovery_choice_courier.json
+  - waitFor: {outbound: {channel: SMS, id: SMS-COURIER}}
+  - setLineProfile: {asset: ONT-55012, profile: post_swap_normal}
+  - waitFor: {state: CLOSED}
+  - compareGolden: golden/s2_broadband_whatsapp.golden.json

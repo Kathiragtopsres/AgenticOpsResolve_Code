@@ -1,0 +1,56 @@
+{
+  "source/detail-type": [
+    [
+      "tcs.opsresolve.telemetry",
+      "Telemetry Anomaly Detected"
+    ],
+    [
+      "tcs.opsresolve.case",
+      "Case Opened"
+    ],
+    [
+      "tcs.opsresolve.channel",
+      "Customer Message Received"
+    ],
+    [
+      "tcs.opsresolve.channel",
+      "Customer Action Selected"
+    ],
+    [
+      "tcs.opsresolve.channel",
+      "Message Delivery Status"
+    ],
+    [
+      "tcs.opsresolve.case",
+      "Case State Changed"
+    ],
+    [
+      "tcs.opsresolve.workforce",
+      "Technician ETA Updated"
+    ],
+    [
+      "tcs.opsresolve.inventory",
+      "Part Pick Failed"
+    ],
+    [
+      "tcs.opsresolve.timer",
+      "Timer Fired"
+    ],
+    [
+      "tcs.opsresolve.approval",
+      "Approval Requested"
+    ],
+    [
+      "tcs.opsresolve.approval",
+      "Approval Decided"
+    ],
+    [
+      "tcs.opsresolve.fsm",
+      "Work Order Completed"
+    ],
+    [
+      "tcs.opsresolve.case",
+      "Case Closed"
+    ]
+  ]
+}

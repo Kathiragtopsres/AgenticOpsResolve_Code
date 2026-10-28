@@ -1,0 +1,21 @@
+{
+  "source": "tcs.opsresolve.inventory",
+  "detail-type": "Part Pick Failed",
+  "detail": {
+    "eventId": "evt-pick-01",
+    "eventVersion": "1.0",
+    "occurredAt": "2026-10-20T13:05:00Z",
+    "caseId": "SR-2026-000207",
+    "correlationId": "corr-2b71",
+    "actor": {
+      "type": "SYSTEM",
+      "id": "mock-erp"
+    },
+    "payload": {
+      "reservationId": "RSV-9031",
+      "depotId": "DEP-CHN-02",
+      "partId": "ONT-X200",
+      "reason": "STOCK_DISCREPANCY"
+    }
+  }
+}

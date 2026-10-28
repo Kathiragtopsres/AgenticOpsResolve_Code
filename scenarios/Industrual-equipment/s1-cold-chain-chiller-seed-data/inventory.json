@@ -1,0 +1,26 @@
+[
+  {
+    "depotId": "DEP-CHN-01",
+    "partId": "CTRL-BRD-500",
+    "onHand": 2,
+    "reserved": 0
+  },
+  {
+    "depotId": "DEP-BLR-01",
+    "partId": "CTRL-BRD-500",
+    "onHand": 4,
+    "reserved": 0
+  },
+  {
+    "depotId": "DEP-CHN-01",
+    "partId": "CTRL-BRD-900",
+    "onHand": 1,
+    "reserved": 0
+  },
+  {
+    "depotId": "DEP-CHN-01",
+    "partId": "PRS-SNS-55",
+    "onHand": 10,
+    "reserved": 0
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "depotId": "DEP-CHN-02",
+    "name": "Chennai Telecom Depot",
+    "region": "SOUTH",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "depotId": "HUB-CHN-C1",
+    "name": "Courier Hub Chennai Central",
+    "region": "SOUTH",
+    "courier": true,
+    "tenantId": "meravix-broadband"
+  }
+]

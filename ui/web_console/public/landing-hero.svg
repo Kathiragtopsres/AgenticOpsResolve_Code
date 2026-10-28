@@ -1,0 +1,62 @@
+<svg width="760" height="480" viewBox="0 0 760 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From alert to resolution">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3f8fd"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5a524"/>
+      <stop offset="0.5" stop-color="#3bb0d6"/>
+      <stop offset="1" stop-color="#3bb273"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1f3a5f" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="760" height="480" rx="18" fill="url(#sky)"/>
+
+  <!-- flow line left to right -->
+  <path d="M150 250 H610" stroke="url(#flow)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"/>
+
+  <!-- LEFT: refrigeration unit with amber warning -->
+  <g filter="url(#soft)">
+    <rect x="70" y="150" width="130" height="200" rx="12" fill="#ffffff" stroke="#d8e4f0" stroke-width="2"/>
+    <rect x="86" y="168" width="98" height="78" rx="7" fill="#eaf3fb"/>
+    <rect x="86" y="258" width="98" height="76" rx="7" fill="#eaf3fb"/>
+    <rect x="92" y="176" width="40" height="7" rx="3.5" fill="#c6dbee"/>
+    <rect x="92" y="266" width="40" height="7" rx="3.5" fill="#c6dbee"/>
+    <circle cx="168" cy="208" r="7" fill="#f5a524"/>
+    <circle cx="168" cy="208" r="13" fill="#f5a524" fill-opacity="0.22"/>
+  </g>
+  <text x="135" y="372" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#5a6b80">Cold-storage alert</text>
+
+  <!-- MIDDLE: cloud + shield (intelligent monitoring and safe control) -->
+  <g filter="url(#soft)">
+    <path d="M330 212c0-16 13-28 29-28 11 0 20 6 25 15 3-1 6-2 9-2 14 0 25 11 25 25s-11 25-25 25h-63c-14 0-25-11-25-25 0-11 8-21 18-24z" fill="#ffffff" stroke="#cfe0f0" stroke-width="2"/>
+    <path d="M380 236l16 7v12c0 10-7 17-16 20-9-3-16-10-16-20v-12l16-7z" fill="#eaf3fb" stroke="#3bb0d6" stroke-width="2"/>
+    <path d="M372 257l6 6 11-12" stroke="#3bb273" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <text x="384" y="320" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#5a6b80">Intelligent monitoring</text>
+
+  <!-- RIGHT: technician with van + green tick -->
+  <g filter="url(#soft)">
+    <rect x="520" y="196" width="150" height="92" rx="12" fill="#ffffff" stroke="#d8e4f0" stroke-width="2"/>
+    <rect x="536" y="214" width="60" height="56" rx="7" fill="#eaf3fb"/>
+    <rect x="606" y="226" width="52" height="44" rx="7" fill="#dff0f8"/>
+    <circle cx="548" cy="300" r="16" fill="#2d3f57"/>
+    <circle cx="636" cy="300" r="16" fill="#2d3f57"/>
+    <circle cx="548" cy="300" r="6" fill="#ffffff"/>
+    <circle cx="636" cy="300" r="6" fill="#ffffff"/>
+  </g>
+  <!-- technician -->
+  <g filter="url(#soft)">
+    <circle cx="470" cy="170" r="18" fill="#f2c6a0"/>
+    <path d="M470 150a18 18 0 0 1 18 15h-36a18 18 0 0 1 18-15z" fill="#2d3f57"/>
+    <rect x="446" y="192" width="48" height="60" rx="14" fill="#3bb0d6"/>
+    <rect x="456" y="204" width="28" height="30" rx="6" fill="#ffffff" fill-opacity="0.85"/>
+  </g>
+  <circle cx="596" cy="166" r="20" fill="#3bb273"/>
+  <path d="M586 166l7 7 13-14" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="565" y="372" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#5a6b80">Resolved on site</text>
+</svg>

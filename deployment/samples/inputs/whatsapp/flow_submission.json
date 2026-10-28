@@ -1,0 +1,10 @@
+{
+  "version": "3.0",
+  "action": "data_exchange",
+  "screen": "CONFIRM",
+  "flow_token": "flow-SR-2026-000207-7f3a",
+  "data": {
+    "slotId": "SLT-W1",
+    "accessNotes": "Buzzer 3B, after 10am please"
+  }
+}

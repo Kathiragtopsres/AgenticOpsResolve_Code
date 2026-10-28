@@ -1,0 +1,23 @@
+export type Status = "NOT_STARTED" | "EN_ROUTE" | "ON_SITE" | "COMPLETED";
+export type Job = {
+  id: string;
+  customer: string;
+  site: string;
+  address: string;
+  phone: string;
+  asset: string;
+  serial: string;
+  time: string;
+  distance: string;
+  priority: "Critical" | "Medium" | "Low";
+  status: Status;
+  brief: string;
+  safety?: string;
+  telemetry: string;
+  history: string;
+  part: string;
+  checklist: string[];
+  rating?: number;
+  date?: string;
+};
+export type Part = { name: string; number: string; description: string; qty: number };

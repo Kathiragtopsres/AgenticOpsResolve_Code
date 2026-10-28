@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "closeServiceCase",
+  "x-opsresolve-kind": "write",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "verification": {
+        "type": "object",
+        "properties": {
+          "telemetryNormal": {
+            "type": "boolean"
+          },
+          "customerConfirmed": {
+            "type": "boolean"
+          }
+        }
+      },
+      "idempotencyKey": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "verification",
+      "idempotencyKey"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "state": {
+        "const": "CLOSED"
+      },
+      "closedAt": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  }
+}

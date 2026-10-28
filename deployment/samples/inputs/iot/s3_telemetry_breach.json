@@ -1,0 +1,10 @@
+{
+  "topic": "opsresolve/telemetry/MRI-4410",
+  "payload": {
+    "ts": "2026-10-20T11:40:00Z",
+    "assetId": "MRI-4410",
+    "cryoCompressorTempC": 51.0,
+    "coldHeadTempK": 4.15,
+    "alarm": "WARN"
+  }
+}

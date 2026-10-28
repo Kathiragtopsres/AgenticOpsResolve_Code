@@ -1,0 +1,20 @@
+[
+  {
+    "contractId": "CTR-5510",
+    "customerId": "CUST-1042",
+    "assetIds": [
+      "CHILLER-8821",
+      "CHILLER-8822",
+      "AHU-9011"
+    ],
+    "slaTier": "GOLD_4H",
+    "restoreHours": 4,
+    "coverage": {
+      "parts": true,
+      "labour": true
+    },
+    "warrantyUntil": "2027-03-13",
+    "autoApprovePartUsd": 500,
+    "penaltyPerHourLateUsd": "[USD __]"
+  }
+]

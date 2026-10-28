@@ -1,0 +1,11 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "Sns": {
+        "TopicArn": "arn:aws:sns:us-east-1:111122223333:opsresolve-demo-inbound-wa",
+        "Message": "{\"context\": {\"MetaWabaIds\": [{\"wabaId\": \"[WABA_ID]\", \"arn\": \"arn:aws:social-messaging:us-east-1:111122223333:waba/[id]\"}], \"MetaPhoneNumberIds\": [{\"metaPhoneNumberId\": \"[PHONE_NUMBER_ID]\"}]}, \"whatsAppWebhookEntry\": \"{\\\"id\\\": \\\"[WABA_ID]\\\", \\\"changes\\\": [{\\\"field\\\": \\\"messages\\\", \\\"value\\\": {\\\"messaging_product\\\": \\\"whatsapp\\\", \\\"contacts\\\": [{\\\"wa_id\\\": \\\"12025550171\\\", \\\"profile\\\": {\\\"name\\\": \\\"Priya\\\"}}], \\\"messages\\\": [{\\\"from\\\": \\\"12025550171\\\", \\\"id\\\": \\\"wamid.S2-005\\\", \\\"timestamp\\\": \\\"1792497000\\\", \\\"type\\\": \\\"interactive\\\", \\\"interactive\\\": {\\\"type\\\": \\\"button_reply\\\", \\\"button_reply\\\": {\\\"id\\\": \\\"[signed postback, see Section 7.2.3; WhatsApp button id limit applies]\\\", \\\"title\\\": \\\"Courier today\\\"}}}]}}]}\"}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+    "Version":  "2012-10-17",
+    "Statement":  [
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ResetCaseStoreTables",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-approvals",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-conversations"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:Scan",
+                                         "dynamodb:BatchWriteItem"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "QueryCasesTable",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:Query"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "CompleteWorkOrderAppointment",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:UpdateItem"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ResetFreeAvailabilityWindows",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-field-availability"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:Scan",
+                                         "dynamodb:UpdateItem",
+                                         "dynamodb:DeleteItem"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ResetPartStock",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-inventory"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:UpdateItem"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ResetGatewayDemoTables",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-reservations",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-transfers",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-appointments",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-remote-actions",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-work-order-history",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-idempotency"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:Scan",
+                                         "dynamodb:BatchWriteItem"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "PublishScenarioEvents",
+                          "Resource":  [
+                                           "arn:aws:events:us-east-1:[AWS-ACCOUNT-NUMBER]:event-bus/opsresolve-dev-bus"
+                                       ],
+                          "Action":  [
+                                         "events:PutEvents"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "StreamWorkerInvokeSelf",
+                          "Resource":  [
+                                           "arn:aws:lambda:us-east-1:[AWS-ACCOUNT-NUMBER]:function:opsresolve-dev-console-scenario"
+                                       ],
+                          "Action":  [
+                                         "lambda:InvokeFunction"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "SiteWiseInferenceStartStop",
+                          "Resource":  [
+                                           "arn:aws:iotsitewise:us-east-1:[AWS-ACCOUNT-NUMBER]:asset/b9a97cc7-4e95-45a1-b09f-5bf28d77d3dc",
+                                           "arn:aws:iotsitewise:us-east-1:[AWS-ACCOUNT-NUMBER]:computation-model/54c2c80f-48f5-435b-9d42-2d63b9b162a4"
+                                       ],
+                          "Action":  [
+                                         "iotsitewise:ExecuteAction"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "PublishTelemetry",
+                          "Resource":  [
+                                           "arn:aws:iot:us-east-1:[AWS-ACCOUNT-NUMBER]:topic/opsresolve/telemetry/*"
+                                       ],
+                          "Action":  [
+                                         "iot:Publish"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ResetListTimers",
+                          "Resource":  [
+                                           "*"
+                                       ],
+                          "Action":  [
+                                         "scheduler:ListSchedules"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ResetDeleteOpsresolveTimersOnly",
+                          "Resource":  [
+                                           "arn:aws:scheduler:us-east-1:[AWS-ACCOUNT-NUMBER]:schedule/opsresolve-dev-timers/opsresolve-*"
+                                       ],
+                          "Action":  [
+                                         "scheduler:DeleteSchedule"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "OwnLogGroup",
+                          "Resource":  [
+                                           "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-console-scenario",
+                                           "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-console-scenario:*"
+                                       ],
+                          "Action":  [
+                                         "logs:CreateLogGroup",
+                                         "logs:CreateLogStream",
+                                         "logs:PutLogEvents"
+                                     ]
+                      }
+                  ]
+}

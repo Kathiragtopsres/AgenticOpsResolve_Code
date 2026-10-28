@@ -1,0 +1,16 @@
+{
+  "channel": "WHATSAPP",
+  "contactId": "CON-2201",
+  "caseId": "SR-2026-000207",
+  "kind": "TEXT",
+  "intent": null,
+  "optionId": null,
+  "text": "[redacted by guardrail]",
+  "receivedAt": "2026-10-20T08:01:40Z",
+  "providerMessageId": "wamid.S2-inj",
+  "verified": true,
+  "guardrail": {
+    "action": "GUARDRAIL_INTERVENED",
+    "filter": "PROMPT_ATTACK"
+  }
+}

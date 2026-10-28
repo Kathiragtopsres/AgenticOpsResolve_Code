@@ -1,0 +1,61 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ReadInboundQueue",
+            "Effect": "Allow",
+            "Action": ["sqs:ReceiveMessage", "sqs:DeleteMessage", "sqs:GetQueueAttributes"],
+            "Resource": ["arn:aws:sqs:us-east-1:[AWS-ACCOUNT-NUMBER]:opsresolve-dev-inbound"]
+        },
+        {
+            "Sid": "ResolveContactAndCase",
+            "Effect": "Allow",
+            "Action": ["dynamodb:Scan", "dynamodb:GetItem"],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-contacts",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-technicians",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-conversations",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases"
+            ]
+        },
+        {
+            "Sid": "WhatsAppConversationWrites",
+            "Effect": "Allow",
+            "Action": ["dynamodb:PutItem", "dynamodb:UpdateItem"],
+            "Resource": ["arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-conversations"]
+        },
+        {
+            "Sid": "PostbackNonce",
+            "Effect": "Allow",
+            "Action": ["dynamodb:PutItem", "dynamodb:DeleteItem"],
+            "Resource": ["arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-idempotency"]
+        },
+        {
+            "Sid": "PublishChannelEvents",
+            "Effect": "Allow",
+            "Action": ["events:PutEvents"],
+            "Resource": ["arn:aws:events:us-east-1:[AWS-ACCOUNT-NUMBER]:event-bus/opsresolve-dev-bus"]
+        },
+        {
+            "Sid": "ScanCustomerText",
+            "Effect": "Allow",
+            "Action": ["bedrock:ApplyGuardrail"],
+            "Resource": ["arn:aws:bedrock:us-east-1:[AWS-ACCOUNT-NUMBER]:guardrail/xa0zjafyaz7z"]
+        },
+        {
+            "Sid": "ReadPostbackKey",
+            "Effect": "Allow",
+            "Action": ["secretsmanager:GetSecretValue"],
+            "Resource": ["arn:aws:secretsmanager:us-east-1:[AWS-ACCOUNT-NUMBER]:secret:opsresolve/dev/postback-hmac-key-*"]
+        },
+        {
+            "Sid": "OwnLogGroup",
+            "Effect": "Allow",
+            "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+            "Resource": [
+                "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-inbound-normalizer",
+                "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-inbound-normalizer:*"
+            ]
+        }
+    ]
+}

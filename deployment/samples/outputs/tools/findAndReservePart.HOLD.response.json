@@ -1,0 +1,16 @@
+{
+  "reservationId": "RSV-8840",
+  "partId": "CTRL-BRD-500",
+  "partName": "CX-500 compressor control board",
+  "depotId": "DEP-CHN-01",
+  "status": "HELD",
+  "etaToSite": "2026-10-20T13:30:00Z",
+  "unitValueUsd": 420,
+  "alternatives": [
+    {
+      "depotId": "DEP-BLR-01",
+      "etaToSite": "2026-10-20T19:30:00Z",
+      "transferRequired": true
+    }
+  ]
+}

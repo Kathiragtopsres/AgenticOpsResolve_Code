@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "executeSafeRemoteAction",
+  "x-opsresolve-kind": "write",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "assetId": {
+        "type": "string"
+      },
+      "action": {
+        "type": "string"
+      },
+      "justification": {
+        "type": "string"
+      },
+      "evidenceRefs": {
+        "type": "array"
+      },
+      "approvalId": {
+        "type": "string"
+      },
+      "idempotencyKey": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "assetId",
+      "action",
+      "justification",
+      "idempotencyKey"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "executionId": {
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "EXECUTED",
+          "REJECTED",
+          "FAILED"
+        ]
+      },
+      "postActionTelemetry": {
+        "type": "object"
+      }
+    }
+  }
+}

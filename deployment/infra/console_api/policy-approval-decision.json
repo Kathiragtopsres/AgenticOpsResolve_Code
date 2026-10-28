@@ -1,0 +1,39 @@
+{
+    "Version":  "2012-10-17",
+    "Statement":  [
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "DecideApproval",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-approvals"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:GetItem",
+                                         "dynamodb:UpdateItem"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "PublishApprovalDecided",
+                          "Resource":  [
+                                           "arn:aws:events:us-east-1:[AWS-ACCOUNT-NUMBER]:event-bus/opsresolve-dev-bus"
+                                       ],
+                          "Action":  [
+                                         "events:PutEvents"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "OwnLogGroup",
+                          "Resource":  [
+                                           "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-console-approval-decision",
+                                           "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-console-approval-decision:*"
+                                       ],
+                          "Action":  [
+                                         "logs:CreateLogGroup",
+                                         "logs:CreateLogStream",
+                                         "logs:PutLogEvents"
+                                     ]
+                      }
+                  ]
+}

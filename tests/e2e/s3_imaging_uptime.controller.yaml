@@ -1,0 +1,19 @@
+scenario: S3
+reset: true
+seed: seed/s3-imaging-uptime
+steps:
+  - startTelemetry: telemetry/profiles/s3_mri_drifting.csv
+  - waitFor: {toolCall: requestApproval}
+  - injectInbound: samples/inputs/sns/sms_approval_non_approver.json
+  - assertSecurityEvent: APPROVAL_FROM_NON_APPROVER
+  - injectInbound: samples/inputs/sns/sms_approval_yes_s3_restart.json   # code must match approval (seeded to 7305 via APPROVAL_CODE_SEED)
+  - switchTelemetry: telemetry/profiles/s3_mri_post_restart_slowed.csv
+  - waitFor: {outbound: {channel: RCS, intent: APPOINTMENT_OPTIONS}}
+  - tapOption: {optionId: SLT-M1}
+  - assertPolicyDecision: {tool: createServiceAppointment, technicianId: MED-221, decision: DENY}
+  - assertToolCall: {name: createServiceAppointment, args: {technicianId: MED-305}}
+  - publish: {template: samples/inputs/eventbridge/work_order_completed.json, caseId: SR-2026-000233}
+  - switchTelemetry: telemetry/profiles/s3_mri_repaired.csv
+  - waitFor: {state: CLOSED}
+  - assertEmail: {template: opsr-evidence-pack}
+  - compareGolden: golden/s3_imaging_uptime.golden.json

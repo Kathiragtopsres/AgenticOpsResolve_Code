@@ -1,0 +1,23 @@
+{
+  "probableCauses": [
+    {
+      "cause": "Compressor control board fault",
+      "confidence": 0.81,
+      "evidenceRefs": [
+        "kb:SB-CX500-07#probable-cause",
+        "telemetry:CHILLER-8821:pv-trend"
+      ]
+    },
+    {
+      "cause": "Pressure sensor drift",
+      "confidence": 0.12,
+      "evidenceRefs": [
+        "kb:CX-500-troubleshooting#oscillating"
+      ]
+    }
+  ],
+  "remoteActionCandidate": "CONTROLLER_SOFT_RESET",
+  "safetyFlag": false,
+  "clarifyingQuestion": null,
+  "recommendedPath": "REMOTE"
+}

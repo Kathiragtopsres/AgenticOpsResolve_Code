@@ -1,0 +1,32 @@
+env: demo
+region: us-east-1          # confirm RCS, WhatsApp, AgentCore features and models are available in-Region
+demoClockFactor: 60
+channels:
+  rcsAgentId: rcs-24696a96570f4a60b41ba719424abf83   # TESTING agent, not launched in any country
+  smsOriginationIdentity: "+1888555[xxxx]"
+  wabaId: "[WABA_ID]"
+  whatsappPhoneNumberId: "[PHONE_NUMBER_ID]"
+  sesIdentity: opsresolve.[demo-domain]
+  sesConfigurationSet: opsresolve-demo-email
+  smsConfigurationSet: opsresolve-demo-msg-events
+models:
+  reasoning: "us.amazon.nova-2-lite-v1:0"
+  lightweight: "us.amazon.nova-2-lite-v1:0"
+thresholds:
+  autoApprovePartUsd: 500
+  diagnosisMinConfidence: 0.55
+  recoveryOfferTtlSec: 1800
+  approvalTimeoutMin: 30
+  serviceCreditAutoApplyCapUsd: "[USD __]"
+# Case lifecycle after diagnosis (demo only; read by common/config.py lifecycle()).
+# Timers are EventBridge Scheduler one-time schedules; nothing here reads telemetry.
+lifecycle:
+  remote_fix_outcome: FAIL          # FAIL = the remote fix does not hold -> field visit; PASS = resolved
+  remote_fix_wait_minutes: 2        # REMOTE_FIX_IN_PROGRESS -> outcome
+  verification_window_minutes: 15   # VERIFYING closes after this AND a CSAT score
+  csat_wait_minutes: 60             # no CSAT by then: close anyway, no score stored
+  customer_reply_wait_hours: 24     # AWAITING_CUSTOMER silence -> re-run the diagnosis (never escalate)
+featureFlags:
+  WHATSAPP_ENABLED: true
+  L3_AUTO_REASSIGN: false
+  SCENARIO_S3_ENABLED: false

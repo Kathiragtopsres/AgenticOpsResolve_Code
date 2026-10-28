@@ -1,0 +1,88 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ToolTablesReadWrite",
+            "Effect": "Allow",
+            "Action": ["dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:UpdateItem"],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-idempotency",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-conversations",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-appointments",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-reservations",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-transfers",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-remote-actions",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-approvals",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-work-order-history",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases"
+            ]
+        },
+        {
+            "Sid": "CaseAppointmentsQuery",
+            "Effect": "Allow",
+            "Action": ["dynamodb:Query"],
+            "Resource": ["arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases"]
+        },
+        {
+            "Sid": "TechnicianAvailability",
+            "Effect": "Allow",
+            "Action": ["dynamodb:Query", "dynamodb:UpdateItem"],
+            "Resource": ["arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-field-availability"]
+        },
+        {
+            "Sid": "MockTablesRead",
+            "Effect": "Allow",
+            "Action": ["dynamodb:GetItem"],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-contacts",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-technicians",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-parts"
+            ]
+        },
+        {
+            "Sid": "InventoryRead",
+            "Effect": "Allow",
+            "Action": ["dynamodb:GetItem", "dynamodb:Scan"],
+            "Resource": ["arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-inventory"]
+        },
+        {
+            "Sid": "Reports",
+            "Effect": "Allow",
+            "Action": ["s3:PutObject", "s3:GetObject"],
+            "Resource": ["arn:aws:s3:::opsreslove-dev-reports/*"]
+        },
+        {
+            "Sid": "KnowledgeBase",
+            "Effect": "Allow",
+            "Action": ["bedrock:Retrieve"],
+            "Resource": ["arn:aws:bedrock:us-east-1:[AWS-ACCOUNT-NUMBER]:knowledge-base/TA0KF90K4I"]
+        },
+        {
+            "Sid": "WhatsAppSend",
+            "Effect": "Allow",
+            "Action": ["social-messaging:SendWhatsAppMessage"],
+            "Resource": ["arn:aws:social-messaging:us-east-1:[AWS-ACCOUNT-NUMBER]:phone-number-id/a49b86fe2faf4f06bd1e26b9b75f3b01"]
+        },
+        {
+            "Sid": "WhatsAppTemplates",
+            "Effect": "Allow",
+            "Action": ["social-messaging:ListWhatsAppMessageTemplates"],
+            "Resource": ["arn:aws:social-messaging:us-east-1:[AWS-ACCOUNT-NUMBER]:waba/4fba8293f662494ca0a1335bce91f6a6"]
+        },
+        {
+            "Sid": "RcsSend",
+            "Effect": "Allow",
+            "Action": ["sms-voice:SendRcsMessage"],
+            "Resource": ["arn:aws:sms-voice:us-east-1:[AWS-ACCOUNT-NUMBER]:rcs-agent/rcs-24696a96570f4a60b41ba719424abf83"]
+        },
+        {
+            "Sid": "Secrets",
+            "Effect": "Allow",
+            "Action": ["secretsmanager:GetSecretValue"],
+            "Resource": [
+                "arn:aws:secretsmanager:us-east-1:[AWS-ACCOUNT-NUMBER]:secret:opsresolve/dev/postback-hmac-key-*",
+                "arn:aws:secretsmanager:us-east-1:[AWS-ACCOUNT-NUMBER]:secret:opsresolve/dev/whatsapp-allowlist-*"
+            ]
+        }
+    ]
+}

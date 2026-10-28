@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.agentcore.aws.dev/v1/agentcore.json",
+  "name": "opsresolve",
+  "version": 1,
+  "managedBy": "CDK",
+  "tags": {
+    "agentcore:created-by": "agentcore-cli",
+    "agentcore:project-name": "opsresolve"
+  },
+  "runtimes": [
+    {
+      "name": "opsresolve_agent",
+      "build": "CodeZip",
+      "entrypoint": "opsresolve/agents/runtime_app.py",
+      "codeLocation": "../src/",
+      "runtimeVersion": "PYTHON_3_13",
+      "networkMode": "PUBLIC",
+      "protocol": "HTTP",
+      "executionRoleArn": "arn:aws:iam::[AWS-ACCOUNT-NUMBER]:role/opsresolve-agentcore-agent-exe-role"
+    }
+  ],
+  "memories": [],
+  "knowledgeBases": [],
+  "credentials": [],
+  "evaluators": [],
+  "onlineEvalConfigs": [],
+  "agentCoreGateways": [],
+  "policyEngines": [],
+  "configBundles": [],
+  "abTests": [],
+  "harnesses": [],
+  "datasets": [],
+  "capacityProviders": [],
+  "payments": []
+}

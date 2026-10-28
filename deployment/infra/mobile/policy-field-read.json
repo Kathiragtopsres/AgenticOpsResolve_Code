@@ -1,0 +1,58 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Sid": "ReadCaseStoreTables",
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases/index/*"
+            ],
+            "Action": ["dynamodb:Query", "dynamodb:Scan"]
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "ReadMockGetItem",
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-customers",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-assets",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-sites",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-technicians",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-depots",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-parts",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-inventory"
+            ],
+            "Action": ["dynamodb:GetItem"]
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "ReadMockScan",
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-contacts",
+                "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-inventory"
+            ],
+            "Action": ["dynamodb:Scan"]
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "ReadFieldAvailability",
+            "Resource": "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-field-availability",
+            "Action": ["dynamodb:Query"]
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "ReadPartRequests",
+            "Resource": "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-approvals",
+            "Action": ["dynamodb:Scan"]
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "OwnLogGroup",
+            "Resource": [
+                "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-field-read",
+                "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-field-read:*"
+            ],
+            "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"]
+        }
+    ]
+}

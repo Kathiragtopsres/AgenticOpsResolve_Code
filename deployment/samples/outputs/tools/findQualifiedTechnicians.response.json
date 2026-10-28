@@ -1,0 +1,18 @@
+{
+  "candidates": [
+    {
+      "technicianId": "TECH-204",
+      "score": 0.7395
+    },
+    {
+      "technicianId": "TECH-311",
+      "score": 0.672
+    }
+  ],
+  "rejected": {
+    "TECH-118": "SKILL_MISSING",
+    "TECH-402": "CERT_EXPIRED",
+    "TECH-507": "OUT_OF_REGION",
+    "TECH-615": "SKILL_MISSING"
+  }
+}

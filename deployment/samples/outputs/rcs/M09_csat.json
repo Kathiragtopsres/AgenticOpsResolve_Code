@@ -1,0 +1,37 @@
+{
+  "Content": {
+    "Text": "Your chiller is back to normal. How did we do?"
+  },
+  "Suggestions": [
+    {
+      "Reply": {
+        "Text": "5 - great",
+        "PostbackData": "opsr1|SR-2026-000184|CSAT|5|1792499400|x5|059a81143960ddf1571597e3295142c4"
+      }
+    },
+    {
+      "Reply": {
+        "Text": "4",
+        "PostbackData": "opsr1|SR-2026-000184|CSAT|4|1792499400|x4|6a75dbb5774d1b21264a48436c3475bb"
+      }
+    },
+    {
+      "Reply": {
+        "Text": "3",
+        "PostbackData": "opsr1|SR-2026-000184|CSAT|3|1792499400|x3|ff4e82def90e4510e42124488b6fce6e"
+      }
+    },
+    {
+      "Reply": {
+        "Text": "2",
+        "PostbackData": "opsr1|SR-2026-000184|CSAT|2|1792499400|x2|47d317ddeac1b9bd24ec1bd81f849674"
+      }
+    },
+    {
+      "Reply": {
+        "Text": "1",
+        "PostbackData": "opsr1|SR-2026-000184|CSAT|1|1792499400|x1|47fe824b75d3aee130cac12ac969daf5"
+      }
+    }
+  ]
+}

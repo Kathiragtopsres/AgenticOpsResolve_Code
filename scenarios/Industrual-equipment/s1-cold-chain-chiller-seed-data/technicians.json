@@ -1,0 +1,113 @@
+[
+  {
+    "technicianId": "TECH-204",
+    "name": "R. Kumar",
+    "phone": "+12025550151",
+    "region": "SOUTH",
+    "skills": {
+      "HVAC-CHILLER-L2": 4
+    },
+    "certifications": {
+      "CX-500": "2027-03-31"
+    },
+    "ftfRate": {
+      "CX-500": 0.86
+    },
+    "utilisation": 0.55,
+    "etaMinToPlantA": 60,
+    "shift": "08:00-18:00",
+    "faultFlags": {
+      "jobOverrunMin": 100
+    }
+  },
+  {
+    "technicianId": "TECH-311",
+    "name": "S. Menon",
+    "phone": "+12025550152",
+    "region": "SOUTH",
+    "skills": {
+      "HVAC-CHILLER-L2": 5
+    },
+    "certifications": {
+      "CX-500": "2026-12-31"
+    },
+    "ftfRate": {
+      "CX-500": 0.91
+    },
+    "utilisation": 0.4,
+    "etaMinToPlantA": 150,
+    "shift": "10:00-20:00",
+    "availableFrom": "2026-10-20T13:30:00Z",
+    "etaMinAtRecovery": 50
+  },
+  {
+    "technicianId": "TECH-118",
+    "name": "D. Pillai",
+    "phone": "+12025550153",
+    "region": "SOUTH",
+    "skills": {
+      "HVAC-CHILLER-L1": 3
+    },
+    "certifications": {
+      "CX-500": "2027-01-31"
+    },
+    "ftfRate": {},
+    "utilisation": 0.1,
+    "etaMinToPlantA": 20,
+    "shift": "08:00-18:00"
+  },
+  {
+    "technicianId": "TECH-402",
+    "name": "M. Iqbal",
+    "phone": "+12025550154",
+    "region": "SOUTH",
+    "skills": {
+      "HVAC-CHILLER-L2": 4
+    },
+    "certifications": {
+      "CX-500": "2026-09-30"
+    },
+    "ftfRate": {
+      "CX-500": 0.8
+    },
+    "utilisation": 0.3,
+    "etaMinToPlantA": 30,
+    "shift": "08:00-18:00"
+  },
+  {
+    "technicianId": "TECH-507",
+    "name": "J. Thomas",
+    "phone": "+12025550155",
+    "region": "WEST",
+    "skills": {
+      "HVAC-CHILLER-L2": 4
+    },
+    "certifications": {
+      "CX-500": "2027-06-30"
+    },
+    "ftfRate": {
+      "CX-500": 0.88
+    },
+    "utilisation": 0.2,
+    "etaMinToPlantA": 25,
+    "shift": "08:00-18:00"
+  },
+  {
+    "technicianId": "TECH-615",
+    "name": "K. Das",
+    "phone": "+12025550156",
+    "region": "SOUTH",
+    "skills": {
+      "HVAC-AHU-L2": 4
+    },
+    "certifications": {
+      "AHU-90": "2027-02-28"
+    },
+    "ftfRate": {
+      "AHU-90": 0.84
+    },
+    "utilisation": 0.5,
+    "etaMinToPlantA": 45,
+    "shift": "08:00-18:00"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "depotId": "DEP-CHN-02",
+    "partId": "ONT-X200",
+    "onHand": 1,
+    "reserved": 0,
+    "faultFlags": {
+      "pickFailure": true
+    },
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "depotId": "HUB-CHN-C1",
+    "partId": "ONT-X200",
+    "onHand": 5,
+    "reserved": 0,
+    "tenantId": "meravix-broadband"
+  }
+]

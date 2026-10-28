@@ -1,0 +1,12 @@
+[
+  {
+    "siteId": "PLANT-A",
+    "customerId": "CUST-1042",
+    "name": "Plant A",
+    "address": "12 Industrial Estate Road, Sector 4",
+    "lat": 13.0827,
+    "lon": 80.2707,
+    "timezone": "Asia/Kolkata",
+    "accessNotes": "Gate 2; PPE mandatory; report to maintenance office"
+  }
+]

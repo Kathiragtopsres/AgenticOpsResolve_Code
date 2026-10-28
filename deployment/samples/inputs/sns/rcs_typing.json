@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "Sns": {
+        "Type": "Notification",
+        "TopicArn": "arn:aws:sns:us-east-1:111122223333:opsresolve-demo-inbound-rcs-sms",
+        "MessageId": "00000000-0000-0000-0000-000000000001",
+        "Timestamp": "2026-10-20T10:42:11.000Z",
+        "Message": "{\"originationNumber\": \"+12025550143\", \"destinationNumber\": \"rcs-a1b2c3d4\", \"messageBody\": \"{\\\"type\\\": \\\"RCS_TYPING\\\", \\\"receivedAt\\\": \\\"2026-10-20T10:41:59.000+0000\\\"}\", \"inboundMessageId\": \"typing-1\"}"
+      }
+    }
+  ]
+}

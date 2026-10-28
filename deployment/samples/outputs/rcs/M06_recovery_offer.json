@@ -1,0 +1,31 @@
+{
+  "Content": {
+    "RichCard": {
+      "CardContent": {
+        "Title": "Your engineer is running late",
+        "Description": "R. Kumar's previous job has overrun and he would arrive around 15:10, which puts your 4-hour SLA at risk. S. Menon (certified CX-500) can arrive at 14:20 instead.",
+        "Suggestions": [
+          {
+            "Reply": {
+              "Text": "Accept 14:20",
+              "PostbackData": "opsr1|SR-2026-000184|RECOVERY_ACCEPT|ALT_TECH_311|1792499400|xalt_|9161904d50587973068b6ce283da997a"
+            }
+          },
+          {
+            "Reply": {
+              "Text": "Keep 15:10",
+              "PostbackData": "opsr1|SR-2026-000184|RECOVERY_DECLINE|KEEP|1792499400|xkeep|a1b0c1c4f2ec1c661c2540bc42155012"
+            }
+          },
+          {
+            "Reply": {
+              "Text": "Call me",
+              "PostbackData": "opsr1|SR-2026-000184|HUMAN|-|1792499400|x-|78c569b934ce800887aa27f686a03d0d"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "TimeToLive": 1800
+}

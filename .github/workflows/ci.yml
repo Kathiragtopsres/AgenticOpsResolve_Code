@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,infra]"
+      - name: Lint (ruff)
+        run: ruff check src scripts tests
+      - name: Type check (mypy)
+        run: mypy src
+      - name: Unit + contract tests
+        run: pytest -q tests/unit tests/contract
+      - name: Kit validation
+        run: python scripts/validate_kit.py
+      - name: CDK synth + cdk-nag
+        working-directory: infra
+        run: cdk synth -c env=dev
+      - name: Dependency scan
+        run: pip install pip-audit && pip-audit || true
+
+  console:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Build console
+        working-directory: console
+        run: |
+          npm ci || npm install
+          npm run build

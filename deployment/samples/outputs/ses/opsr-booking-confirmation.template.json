@@ -1,0 +1,8 @@
+{
+  "TemplateName": "opsr-booking-confirmation",
+  "TemplateContent": {
+    "Subject": "Visit booked {{slot}} - case {{caseId}}",
+    "Html": "<p>Hello {{firstName}},</p><p>Your visit is booked for <b>{{slot}}</b> with {{engineer}}. Work order {{workOrderId}}.</p>",
+    "Text": "Hello {{firstName}}, your visit is booked for {{slot}} with {{engineer}}. Work order {{workOrderId}}."
+  }
+}

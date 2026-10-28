@@ -1,0 +1,8 @@
+{
+  "TemplateName": "opsr-service-report",
+  "TemplateContent": {
+    "Subject": "Service report {{caseId}} - {{assetName}}",
+    "Html": "<h1>Service report {{caseId}}</h1><p>Asset: {{assetName}} at {{siteName}}</p><p>Resolution: {{resolution}}</p><p>Engineer: {{engineer}}</p><p>SLA: {{slaOutcome}}</p><p><a href=\"{{reportUrl}}\">Full report (link valid 7 days)</a></p>",
+    "Text": "Service report {{caseId}}\nAsset: {{assetName}} at {{siteName}}\nResolution: {{resolution}}\nEngineer: {{engineer}}\nSLA: {{slaOutcome}}\nReport: {{reportUrl}}"
+  }
+}

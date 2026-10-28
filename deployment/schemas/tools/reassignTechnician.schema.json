@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reassignTechnician",
+  "x-opsresolve-kind": "write",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "workOrderId": {
+        "type": "string"
+      },
+      "fromTechnicianId": {
+        "type": "string"
+      },
+      "toTechnicianId": {
+        "type": "string"
+      },
+      "reason": {
+        "enum": [
+          "DELAY",
+          "CERT_INVALID",
+          "SKILL_MISMATCH",
+          "UNAVAILABLE"
+        ]
+      },
+      "consentRef": {
+        "type": "string"
+      },
+      "idempotencyKey": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "workOrderId",
+      "toTechnicianId",
+      "reason",
+      "idempotencyKey"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "workOrderId": {
+        "type": "string"
+      },
+      "technicianId": {
+        "type": "string"
+      },
+      "newEta": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

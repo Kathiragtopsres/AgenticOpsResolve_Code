@@ -1,0 +1,54 @@
+{
+  "caseId": "SR-2026-000184",
+  "correlationId": "corr-8a9f2c1e",
+  "state": "SCHEDULED",
+  "trigger": {
+    "type": "TIMER",
+    "name": "ETA_CHECKPOINT",
+    "eventId": "evt-tmr-01"
+  },
+  "customer": {
+    "customerId": "CUST-1042",
+    "name": "Meridian Foods",
+    "site": "PLANT-A",
+    "contact": {
+      "contactId": "CON-77",
+      "preferredChannel": "RCS"
+    }
+  },
+  "asset": {
+    "assetId": "CHILLER-8821",
+    "model": "CX-500",
+    "firmware": "4.2.1"
+  },
+  "entitlement": {
+    "covered": true,
+    "slaTier": "GOLD_4H",
+    "restoreBy": "2026-10-20T16:30:00Z"
+  },
+  "diagnosis": {
+    "topCause": "Compressor control board fault",
+    "confidence": 0.81
+  },
+  "plan": {
+    "version": 3,
+    "goals": [
+      "MONITOR_ETA",
+      "VERIFY_COMPLETION"
+    ]
+  },
+  "appointment": {
+    "workOrderId": "WO-77120",
+    "technicianId": "TECH-204",
+    "slotStart": "2026-10-20T14:00:00Z"
+  },
+  "openWaits": [
+    {
+      "type": "TIMER",
+      "name": "ETA_CHECKPOINT",
+      "at": "2026-10-20T12:30:00Z"
+    }
+  ],
+  "recentTimeline": [],
+  "autonomyProfile": "DEFAULT_L2"
+}

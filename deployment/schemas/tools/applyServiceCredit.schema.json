@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "applyServiceCredit",
+  "x-opsresolve-kind": "write",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "customerId": {
+        "type": "string"
+      },
+      "amountUsd": {
+        "type": "number"
+      },
+      "reason": {
+        "type": "string"
+      },
+      "idempotencyKey": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "customerId",
+      "amountUsd",
+      "idempotencyKey"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "creditId": {
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "APPLIED",
+          "NEEDS_APPROVAL"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "messaging_product": "whatsapp",
+  "to": "12025550171",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "body": {
+      "text": "No outage in your area. What colour is the PON light on your fibre box?"
+    },
+    "action": {
+      "buttons": [
+        {
+          "type": "reply",
+          "reply": {
+            "id": "[signed:LIGHTS_GREEN]",
+            "title": "Green"
+          }
+        },
+        {
+          "type": "reply",
+          "reply": {
+            "id": "[signed:LIGHTS_BLINK]",
+            "title": "Blinking"
+          }
+        },
+        {
+          "type": "reply",
+          "reply": {
+            "id": "[signed:LIGHTS_RED]",
+            "title": "Red / off"
+          }
+        }
+      ]
+    }
+  }
+}

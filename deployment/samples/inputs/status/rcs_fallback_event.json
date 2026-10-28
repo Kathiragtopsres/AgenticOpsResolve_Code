@@ -1,0 +1,8 @@
+{
+  "eventType": "TEXT_DELIVERED",
+  "destinationPhoneNumber": "+12025550143",
+  "messageId": "[messageId]",
+  "messageStatus": "DELIVERED",
+  "fallback": "SMS",
+  "_note": "Field names illustrative; map to the actual RCS fallback event per the RCS message events documentation"
+}

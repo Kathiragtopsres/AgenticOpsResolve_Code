@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opsresolve.tcs.example/schemas/case-context-envelope",
+  "title": "Case Context Envelope",
+  "type": "object",
+  "properties": {
+    "caseId": {
+      "type": "string"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "OPEN",
+        "CONTEXT_READY",
+        "DIAGNOSING",
+        "REMOTE_FIX_IN_PROGRESS",
+        "AWAITING_CUSTOMER",
+        "AWAITING_APPROVAL",
+        "PLANNING_FIELD",
+        "SCHEDULED",
+        "AT_RISK",
+        "IN_SERVICE",
+        "RESOLVED_REMOTE",
+        "VERIFYING",
+        "CLOSED",
+        "ESCALATED_HUMAN",
+        "CANCELLED"
+      ]
+    },
+    "trigger": {
+      "type": "object"
+    },
+    "customer": {
+      "type": "object"
+    },
+    "asset": {
+      "type": "object"
+    },
+    "entitlement": {
+      "type": "object"
+    },
+    "diagnosis": {
+      "type": "object"
+    },
+    "plan": {
+      "type": "object"
+    },
+    "appointment": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "openWaits": {
+      "type": "array"
+    },
+    "recentTimeline": {
+      "type": "array"
+    },
+    "autonomyProfile": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "caseId",
+    "correlationId",
+    "state",
+    "trigger"
+  ]
+}

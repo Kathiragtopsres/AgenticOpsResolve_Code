@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "Sns": {
+        "Type": "Notification",
+        "TopicArn": "arn:aws:sns:us-east-1:111122223333:opsresolve-demo-inbound-rcs-sms",
+        "MessageId": "00000000-0000-0000-0000-000000000001",
+        "Timestamp": "2026-10-20T10:42:11.000Z",
+        "Message": "{\"originationNumber\": \"+12025550143\", \"destinationNumber\": \"rcs-a1b2c3d4\", \"messageBody\": \"{\\\"type\\\": \\\"SUGGESTION\\\", \\\"text\\\": \\\"Book 14:00\\\", \\\"postbackData\\\": \\\"opsr1|SR-2026-000184|BOOK_SLOT|SLT-3|1792499400|n8f2k1|771711d4e70fbf5b0657d7c3eb765279\\\"}\", \"inboundMessageId\": \"forged-1\"}"
+      }
+    }
+  ]
+}

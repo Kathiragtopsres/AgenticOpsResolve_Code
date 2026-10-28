@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "assetModel": "CX-500",
+    "firmwareRange": "4.0-4.2.x",
+    "docType": "SERVICE_BULLETIN",
+    "docStatus": "ACTIVE",
+    "safetyClass": "STANDARD",
+    "effectiveDate": "2026-04-01"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "channel": "RCS",
+  "contactId": "CON-77",
+  "caseId": "SR-2026-000184",
+  "kind": "POSTBACK",
+  "intent": null,
+  "optionId": null,
+  "text": "Book 14:00",
+  "receivedAt": "2026-10-20T10:42:11Z",
+  "providerMessageId": "forged-1",
+  "verified": false,
+  "guardrail": {
+    "action": "NONE"
+  },
+  "securityEvent": "POSTBACK_BAD_SIGNATURE"
+}

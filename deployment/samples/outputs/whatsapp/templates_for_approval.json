@@ -1,0 +1,42 @@
+[
+  {
+    "name": "opsr_service_alert",
+    "category": "UTILITY",
+    "language": "en",
+    "body": "OpsResolve: we detected an issue with your {{1}}. Case {{2}}. Tap below to see options.",
+    "buttons": [
+      "See options",
+      "Talk to a person"
+    ]
+  },
+  {
+    "name": "opsr_appointment_flow",
+    "category": "UTILITY",
+    "language": "en",
+    "body": "Book your service visit for case {{1}} with live availability.",
+    "buttons": [
+      "FLOW: Book a visit"
+    ]
+  },
+  {
+    "name": "opsr_eta_update",
+    "category": "UTILITY",
+    "language": "en",
+    "body": "Your technician {{1}} is expected at {{2}} for case {{3}}.",
+    "buttons": [
+      "OK",
+      "Reschedule"
+    ]
+  },
+  {
+    "name": "opsr_service_complete",
+    "category": "UTILITY",
+    "language": "en",
+    "body": "Case {{1}} is resolved. Your summary has been emailed. How did we do?",
+    "buttons": [
+      "Great",
+      "OK",
+      "Not good"
+    ]
+  }
+]

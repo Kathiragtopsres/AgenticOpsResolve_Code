@@ -1,0 +1,42 @@
+[
+  {
+    "customerId": "CUST-2201",
+    "name": "Priya Nair (Nair Design Studio)",
+    "segment": "Small business / home",
+    "region": "SOUTH",
+    "plan": "FIBRE-500-BIZ",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "customerId": "CUST-2202",
+    "name": "Karthik Menon",
+    "segment": "Home",
+    "region": "SOUTH",
+    "plan": "FIBRE-100-HOME",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "customerId": "CUST-2203",
+    "name": "Lakeside Dental Clinic",
+    "segment": "Small business",
+    "region": "SOUTH",
+    "plan": "FIBRE-300-BIZ",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "customerId": "CUST-2204",
+    "name": "Ananya Shah",
+    "segment": "Home",
+    "region": "SOUTH",
+    "plan": "FIBRE-100-HOME",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "customerId": "CUST-2205",
+    "name": "Coastal Crumbs Bakery",
+    "segment": "Small business",
+    "region": "SOUTH",
+    "plan": "FIBRE-500-BIZ",
+    "tenantId": "meravix-broadband"
+  }
+]

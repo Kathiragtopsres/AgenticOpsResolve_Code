@@ -1,0 +1,59 @@
+{
+  "Content": {
+    "Carousel": {
+      "Cards": [
+        {
+          "Title": "Tue 20 Oct, 14:00-16:00",
+          "Description": "R. Kumar, certified CX-500 engineer. Part reserved. Meets your 4-hour SLA.",
+          "Suggestions": [
+            {
+              "Reply": {
+                "Text": "Book 14:00",
+                "PostbackData": "opsr1|SR-2026-000184|BOOK_SLOT|SLT-1|1792499400|xslt-|dc19546b60cb7e1c05555981b89548f4"
+              }
+            }
+          ]
+        },
+        {
+          "Title": "Tue 20 Oct, 15:00-17:00",
+          "Description": "S. Menon, certified CX-500 engineer. Part reserved. Meets your SLA.",
+          "Suggestions": [
+            {
+              "Reply": {
+                "Text": "Book 15:00",
+                "PostbackData": "opsr1|SR-2026-000184|BOOK_SLOT|SLT-2|1792499400|xslt-|287214eea64c99389fbcb1328cdb32be"
+              }
+            }
+          ]
+        },
+        {
+          "Title": "Wed 21 Oct, 09:00-11:00",
+          "Description": "Outside SLA - choose only if site access is limited today.",
+          "Suggestions": [
+            {
+              "Reply": {
+                "Text": "Book Wed 09:00",
+                "PostbackData": "opsr1|SR-2026-000184|BOOK_SLOT|SLT-3|1792499400|xslt-|fcedab0bbf027ba0473290e635ab9c1f"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Suggestions": [
+    {
+      "Reply": {
+        "Text": "None suit me",
+        "PostbackData": "opsr1|SR-2026-000184|NO_SLOT_FITS|-|1792499400|x-|62b8fe7acb92809836cbb4d4de8c0365"
+      }
+    },
+    {
+      "Reply": {
+        "Text": "Talk to a person",
+        "PostbackData": "opsr1|SR-2026-000184|HUMAN|-|1792499400|x-|78c569b934ce800887aa27f686a03d0d"
+      }
+    }
+  ],
+  "TimeToLive": 3600
+}

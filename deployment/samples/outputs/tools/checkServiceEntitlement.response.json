@@ -1,0 +1,9 @@
+{
+  "covered": true,
+  "coverageType": "WARRANTY_PARTS_LABOUR",
+  "slaTier": "GOLD_4H",
+  "restoreBy": "2026-10-20T16:30:00Z",
+  "priority": "P2",
+  "customerCostUsd": 0,
+  "_note": "Predictive case: restoreBy = predicted failure time (09:15 + ~7h15m). For an actual outage, restoreBy = case open + 4 h (Gold). Demo clock may shift absolute times; tests compare durations."
+}

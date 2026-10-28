@@ -1,0 +1,20 @@
+[
+  {
+    "approverId": "APR-11",
+    "name": "Service Manager South",
+    "phone": "+12025550160",
+    "scope": [
+      "PART_ABOVE_THRESHOLD",
+      "CHARGEABLE_VISIT"
+    ],
+    "secondary": "APR-12"
+  },
+  {
+    "approverId": "APR-12",
+    "name": "Regional Service Director",
+    "phone": "+12025550161",
+    "scope": [
+      "*"
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "generateServiceReport",
+  "x-opsresolve-kind": "read",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "format": {
+        "enum": [
+          "HTML",
+          "PDF"
+        ]
+      },
+      "includeEvidence": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "caseId"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "reportKey": {
+        "type": "string"
+      },
+      "presignedUrl": {
+        "type": "string"
+      },
+      "expiresAt": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  }
+}

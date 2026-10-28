@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Normalised inbound event detail",
+  "type": "object",
+  "properties": {
+    "channel": {
+      "enum": [
+        "RCS",
+        "SMS",
+        "WHATSAPP"
+      ]
+    },
+    "contactId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "caseId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "TEXT",
+        "POSTBACK",
+        "FLOW_SUBMISSION",
+        "MEDIA",
+        "APPROVAL_REPLY",
+        "OPT_OUT"
+      ]
+    },
+    "intent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "optionId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "receivedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "providerMessageId": {
+      "type": "string"
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "guardrail": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "channel",
+    "kind",
+    "receivedAt",
+    "verified"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "users": 50,
+  "spawnRate": 5,
+  "durationMin": 10,
+  "targets": {
+    "inboundToFirstResponseP95Sec": 8,
+    "flowEndpointP95Ms": 1500,
+    "errorRatePct": 0,
+    "duplicateBookings": 0
+  }
+}

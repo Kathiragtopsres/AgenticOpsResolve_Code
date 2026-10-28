@@ -1,0 +1,29 @@
+[
+  {
+    "id": "FP-01",
+    "value": "opsr1|SR-2026-000184|BOOK_SLOT|SLT-3|1792499400|n8f2k1|0000000000000000000000000000000",
+    "expected": "BAD_SIGNATURE"
+  },
+  {
+    "id": "FP-02",
+    "value": "Book 14:00",
+    "expected": "MALFORMED"
+  },
+  {
+    "id": "FP-03",
+    "value": "opsr2|SR-2026-000184|BOOK_SLOT|SLT-1|1792499400|n|x",
+    "expected": "MALFORMED"
+  },
+  {
+    "id": "FP-04",
+    "valueFrom": "samples/inputs/sns/rcs_postback_book_slot.json",
+    "replayed": true,
+    "expected": "REPLAYED"
+  },
+  {
+    "id": "FP-05",
+    "valueFrom": "samples/inputs/sns/rcs_postback_book_slot.json",
+    "nowOffsetSec": 7200,
+    "expected": "EXPIRED"
+  }
+]

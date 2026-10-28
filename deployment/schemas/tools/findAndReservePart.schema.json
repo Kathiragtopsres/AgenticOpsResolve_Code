@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "findAndReservePart",
+  "x-opsresolve-kind": "write",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "assetId": {
+        "type": "string"
+      },
+      "probableFault": {
+        "type": "string"
+      },
+      "serviceLocation": {
+        "type": "object"
+      },
+      "neededBy": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "mode": {
+        "enum": [
+          "HOLD",
+          "CONFIRM"
+        ]
+      },
+      "estimatedUnitValueUsd": {
+        "type": "number"
+      },
+      "covered": {
+        "type": "boolean"
+      },
+      "idempotencyKey": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "assetId",
+      "probableFault",
+      "mode",
+      "idempotencyKey"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "reservationId": {
+        "type": "string"
+      },
+      "partId": {
+        "type": "string"
+      },
+      "depotId": {
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "HELD",
+          "CONFIRMED",
+          "UNAVAILABLE"
+        ]
+      },
+      "etaToSite": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "unitValueUsd": {
+        "type": "number"
+      },
+      "alternatives": {
+        "type": "array"
+      }
+    }
+  }
+}

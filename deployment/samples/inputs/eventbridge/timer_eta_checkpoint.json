@@ -1,0 +1,19 @@
+{
+  "source": "tcs.opsresolve.timer",
+  "detail-type": "Timer Fired",
+  "detail": {
+    "eventId": "evt-tmr-01",
+    "eventVersion": "1.0",
+    "occurredAt": "2026-10-20T12:30:00Z",
+    "caseId": "SR-2026-000184",
+    "correlationId": "corr-8a9f2c1e",
+    "actor": {
+      "type": "SYSTEM",
+      "id": "scheduler"
+    },
+    "payload": {
+      "name": "ETA_CHECKPOINT",
+      "offsetMin": -90
+    }
+  }
+}

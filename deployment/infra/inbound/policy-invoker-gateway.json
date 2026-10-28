@@ -1,0 +1,41 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Sid": "GetGatewayUrl",
+            "Action": ["bedrock-agentcore:GetGateway"],
+            "Resource": "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:gateway/opsresolve-gateway-4pqnd9tdmj"
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "WorkloadIdentityForGatewayToken",
+            "Action": [
+                "bedrock-agentcore:CreateWorkloadIdentity",
+                "bedrock-agentcore:GetWorkloadAccessToken",
+                "bedrock-agentcore:GetWorkloadAccessTokenForUserId"
+            ],
+            "Resource": [
+                "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:workload-identity-directory/default",
+                "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:workload-identity-directory/default/workload-identity/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "GetGatewayOauthToken",
+            "Action": ["bedrock-agentcore:GetResourceOauth2Token"],
+            "Resource": [
+                "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:token-vault/default",
+                "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:token-vault/default/oauth2credentialprovider/opsresolve-dev-gateway-credentials",
+                "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:workload-identity-directory/default",
+                "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:workload-identity-directory/default/workload-identity/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Sid": "ReadCredentialProviderSecret",
+            "Action": ["secretsmanager:GetSecretValue"],
+            "Resource": "arn:aws:secretsmanager:us-east-1:[AWS-ACCOUNT-NUMBER]:secret:bedrock-agentcore-identity!default/oauth2/opsresolve-dev-gateway-credentials-*"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "checkServiceEntitlement",
+  "x-opsresolve-kind": "read",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "assetId": {
+        "type": "string"
+      },
+      "issueType": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "assetId"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "covered": {
+        "type": "boolean"
+      },
+      "coverageType": {
+        "type": "string"
+      },
+      "slaTier": {
+        "type": "string"
+      },
+      "restoreBy": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "priority": {
+        "enum": [
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ]
+      },
+      "customerCostUsd": {
+        "type": "number"
+      }
+    }
+  }
+}

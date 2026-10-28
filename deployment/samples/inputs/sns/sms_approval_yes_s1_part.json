@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "Sns": {
+        "Type": "Notification",
+        "TopicArn": "arn:aws:sns:us-east-1:111122223333:opsresolve-demo-inbound-rcs-sms",
+        "MessageId": "00000000-0000-0000-0000-000000000001",
+        "Timestamp": "2026-10-20T10:42:11.000Z",
+        "Message": "{\"originationNumber\": \"+12025550160\", \"destinationNumber\": \"+18885550100\", \"messageBody\": \"YES 4821\", \"inboundMessageId\": \"sms-apr-s1\"}"
+      }
+    }
+  ]
+}

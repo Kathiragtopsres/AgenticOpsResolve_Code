@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "sendCustomerMessage",
+  "x-opsresolve-kind": "write",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "intent": {
+        "enum": [
+          "APPOINTMENT_OPTIONS",
+          "CONFIRMATION",
+          "RECOVERY_OFFER",
+          "ETA_UPDATE",
+          "CLARIFY",
+          "REPORT",
+          "CSAT",
+          "URGENT_ALERT",
+          "APPROVAL_REQUEST"
+        ]
+      },
+      "channelPreference": {
+        "enum": [
+          "AUTO",
+          "RCS",
+          "SMS",
+          "WHATSAPP",
+          "EMAIL"
+        ]
+      },
+      "content": {
+        "type": "object"
+      },
+      "idempotencyKey": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "intent",
+      "content",
+      "idempotencyKey"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "messageId": {
+        "type": "string"
+      },
+      "channel": {
+        "type": "string"
+      },
+      "fallbackConfigured": {
+        "type": "boolean"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

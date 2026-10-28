@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opsresolve.tcs.example/schemas/event-envelope",
+  "title": "OpsResolve EventBridge envelope (detail)",
+  "type": "object",
+  "properties": {
+    "eventId": {
+      "type": "string"
+    },
+    "eventVersion": {
+      "const": "1.0"
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "caseId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^SR-\\d{4}-\\d{6}$"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "CUSTOMER",
+            "AGENT",
+            "HUMAN",
+            "SYSTEM"
+          ]
+        },
+        "contactId": {
+          "type": "string"
+        },
+        "channel": {
+          "enum": [
+            "RCS",
+            "SMS",
+            "WHATSAPP",
+            "EMAIL",
+            "CONSOLE",
+            "IOT",
+            "SYSTEM"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "eventId",
+    "eventVersion",
+    "occurredAt",
+    "correlationId",
+    "actor",
+    "payload"
+  ]
+}

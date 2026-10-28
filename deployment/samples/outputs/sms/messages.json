@@ -1,0 +1,27 @@
+[
+  {
+    "id": "SMS-P1",
+    "to": "+12025550144",
+    "body": "OpsResolve P1: CHILLER-8821 at Plant A predicted to fail within ~6h. Visit being arranged with Anita Rao. Case SR-2026-000184."
+  },
+  {
+    "id": "SMS-APR",
+    "to": "+12025550160",
+    "body": "OpsResolve SR-2026-000184: Approve part CTRL-BRD-900 (USD 1,240)? Reply YES 4821 or NO 4821. Expires in 30 min."
+  },
+  {
+    "id": "SMS-APR-S3",
+    "to": "+12025550190",
+    "body": "OpsResolve SR-2026-000233: Approve CRYO_COMPRESSOR_RESTART on MRI-4410 (St. Aurelia)? Evidence: SB-MRX-12. Reply YES 7305 or NO 7305."
+  },
+  {
+    "id": "SMS-COURIER",
+    "to": "+12025550171",
+    "body": "OpsResolve: your replacement ONT is on the way with CityDash, ETA 16:30. Handover code 5520. Reply HELP for support."
+  },
+  {
+    "id": "SMS-FALLBACK-M03",
+    "to": "+12025550143",
+    "body": "OpsResolve: pick a visit time for your CX-500 chiller (case 184): https://opsr.example/c/184 . Tue 14:00 recommended."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "targets": {
+    "default": {
+      "resources": {
+        "runtimes": {
+          "opsresolve_agent": {
+            "runtimeId": "opsresolve_opsresolve_agent-OzH6p2FZum",
+            "runtimeArn": "arn:aws:bedrock-agentcore:us-east-1:[AWS-ACCOUNT-NUMBER]:runtime/opsresolve_opsresolve_agent-OzH6p2FZum",
+            "roleArn": "arn:aws:iam::[AWS-ACCOUNT-NUMBER]:role/opsresolve-agentcore-agent-exe-role"
+          }
+        },
+        "stackName": "AgentCore-opsresolve-default",
+        "deployHash": "147de6f4f7159fbf"
+      }
+    }
+  }
+}

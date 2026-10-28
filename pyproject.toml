@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tcs-agentic-opsresolve"
+version = "1.0.0"
+description = "TCS Agentic OpsResolve — agentic service resolution over AWS CDS + Bedrock AgentCore"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "TCS AWS COE" }]
+
+dependencies = [
+    "boto3>=1.34",
+    "botocore>=1.34",
+    "pydantic>=2.6",
+    "jsonschema>=4.21",
+    "python-dateutil>=2.9",
+    "PyYAML>=6.0",
+    "strands-agents>=1.57.1",
+    "aws-lambda-powertools>=2.34",
+    # Pinned explicitly (was previously resolved transitively via strands-agents,
+    # which caused a deploy-time ImportError: gateway_client.py originally imported
+    # mcp.client.streamable_http.streamablehttp_client (the mcp 1.x name), but the
+    # CodeZip builder resolved mcp>=2.0 for the deployed target, which renamed it to
+    # streamable_http_client with a different signature. Fixed by using MCPClient's
+    # own url=/headers= constructor path instead (strands-agents' internal compat
+    # shim handles the 1.x/2.x split), and pinning mcp here so local dev matches
+    # what actually gets deployed.
+    "mcp>=2.1.1",
+    # Required by agents/runtime_app.py (BedrockAgentCoreApp) for AgentCore Runtime
+    # packaging. The CodeZip builder resolves the deployed bundle from this list, so
+    # omitting it ships a zip without bedrock_agentcore and the container crash-loops
+    # on import, surfacing only as "Runtime initialization time exceeded".
+    "bedrock-agentcore>=1.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "hypothesis>=6.98",
+    "ruff>=0.3",
+    "mypy>=1.8",
+    "locust>=2.24",
+    "moto>=5.0",
+]
+infra = [
+    "aws-cdk-lib>=2.130",
+    "constructs>=10.3",
+    "cdk-nag>=2.28",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "reference"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_ignores = true
+ignore_missing_imports = true
+files = ["src"]

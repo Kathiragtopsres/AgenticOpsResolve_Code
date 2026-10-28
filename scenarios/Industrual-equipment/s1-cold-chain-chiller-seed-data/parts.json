@@ -1,0 +1,37 @@
+[
+  {
+    "partId": "CTRL-BRD-500",
+    "name": "CX-500 compressor control board",
+    "unitValueUsd": 420,
+    "compatibleModels": [
+      "CX-500"
+    ],
+    "faultCodes": [
+      "CMP_CTRL_PV"
+    ]
+  },
+  {
+    "partId": "CTRL-BRD-900",
+    "name": "CX-500 control board, extended (rev B)",
+    "unitValueUsd": 1240,
+    "compatibleModels": [
+      "CX-500"
+    ],
+    "faultCodes": [
+      "CMP_CTRL_PV",
+      "CMP_CTRL_COMM"
+    ]
+  },
+  {
+    "partId": "PRS-SNS-55",
+    "name": "Pressure sensor",
+    "unitValueUsd": 95,
+    "compatibleModels": [
+      "CX-500",
+      "CX-300"
+    ],
+    "faultCodes": [
+      "SNS_DRIFT"
+    ]
+  }
+]

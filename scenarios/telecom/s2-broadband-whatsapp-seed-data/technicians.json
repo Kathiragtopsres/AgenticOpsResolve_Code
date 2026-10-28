@@ -1,0 +1,78 @@
+[
+  {
+    "technicianId": "TEL-801",
+    "name": "A. Iyer",
+    "region": "SOUTH",
+    "skills": {
+      "FIBRE-INSTALL": 4
+    },
+    "certifications": {
+      "ONT-X200": "2027-05-31"
+    },
+    "ftfRate": {
+      "ONT-X200": 0.9
+    },
+    "utilisation": 0.7,
+    "nextFreeSlot": "2026-10-21T09:00:00Z",
+    "phone": "+12025550191",
+    "tenantId": "meravix-broadband",
+    "homeDepotId": "DEP-CHN-02"
+  },
+  {
+    "technicianId": "TEL-802",
+    "name": "B. Joseph",
+    "region": "SOUTH",
+    "skills": {
+      "FIBRE-INSTALL": 3
+    },
+    "certifications": {
+      "ONT-X200": "2027-05-31"
+    },
+    "ftfRate": {
+      "ONT-X200": 0.85
+    },
+    "utilisation": 0.8,
+    "nextFreeSlot": "2026-10-21T11:00:00Z",
+    "phone": "+12025550192",
+    "tenantId": "meravix-broadband",
+    "homeDepotId": "DEP-CHN-02"
+  },
+  {
+    "technicianId": "TEL-803",
+    "name": "C. Reddy",
+    "region": "SOUTH",
+    "skills": {
+      "FIBRE-INSTALL": 4
+    },
+    "certifications": {
+      "ONT-X200": "2027-05-31"
+    },
+    "ftfRate": {
+      "ONT-X200": 0.88
+    },
+    "utilisation": 0.9,
+    "nextFreeSlot": "2026-10-21T14:00:00Z",
+    "phone": "+12025550193",
+    "tenantId": "meravix-broadband",
+    "homeDepotId": "DEP-CHN-02"
+  },
+  {
+    "technicianId": "TEL-804",
+    "name": "L. Fernandes",
+    "region": "SOUTH",
+    "skills": {
+      "FIBRE-INSTALL": 5
+    },
+    "certifications": {
+      "ONT-X200": "2027-05-31"
+    },
+    "ftfRate": {
+      "ONT-X200": 0.93
+    },
+    "utilisation": 0.95,
+    "nextFreeSlot": "2026-10-22T09:00:00Z",
+    "phone": "+12025550194",
+    "tenantId": "meravix-broadband",
+    "homeDepotId": "DEP-CHN-02"
+  }
+]

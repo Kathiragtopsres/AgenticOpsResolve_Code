@@ -1,0 +1,36 @@
+{
+  "_note": "Template message that opens the Dynamic Flow; template name and components must match the approved template.",
+  "messaging_product": "whatsapp",
+  "to": "12025550171",
+  "type": "template",
+  "template": {
+    "name": "opsr_appointment_flow",
+    "language": {
+      "code": "en"
+    },
+    "components": [
+      {
+        "type": "body",
+        "parameters": [
+          {
+            "type": "text",
+            "text": "SR-2026-000207"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "sub_type": "flow",
+        "index": "0",
+        "parameters": [
+          {
+            "type": "action",
+            "action": {
+              "flow_token": "flow-SR-2026-000207-7f3a"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

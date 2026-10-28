@@ -1,0 +1,20 @@
+{
+  "source": "tcs.opsresolve.workforce",
+  "detail-type": "Technician ETA Updated",
+  "detail": {
+    "eventId": "evt-eta-01",
+    "eventVersion": "1.0",
+    "occurredAt": "2026-10-20T12:30:00Z",
+    "caseId": "SR-2026-000184",
+    "correlationId": "corr-8a9f2c1e",
+    "actor": {
+      "type": "SYSTEM",
+      "id": "mock-wfm"
+    },
+    "payload": {
+      "technicianId": "TECH-204",
+      "currentJobRemainingMin": 100,
+      "travelMin": 60
+    }
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "siteId": "PREM-2201",
+    "customerId": "CUST-2201",
+    "address": "Flat 3B, 44 Lake View Road",
+    "lat": 13.0418,
+    "lon": 80.2341,
+    "accessNotes": "Buzzer 3B; available 09:00-19:00",
+    "name": "Nair Design Studio (home office)",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "siteId": "PREM-2202",
+    "customerId": "CUST-2202",
+    "name": "Karthik Menon (home)",
+    "address": "12 Besant Avenue, Adyar",
+    "lat": 13.0067,
+    "lon": 80.257,
+    "accessNotes": "Call on arrival",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "siteId": "PREM-2203",
+    "customerId": "CUST-2203",
+    "name": "Lakeside Dental Clinic",
+    "address": "7 Greenways Road, RA Puram",
+    "lat": 13.0235,
+    "lon": 80.254,
+    "accessNotes": "Call on arrival",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "siteId": "PREM-2204",
+    "customerId": "CUST-2204",
+    "name": "Ananya Shah (home)",
+    "address": "Flat 5A, 21 Mount Road, Guindy",
+    "lat": 13.0102,
+    "lon": 80.2209,
+    "accessNotes": "Call on arrival",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "siteId": "PREM-2205",
+    "customerId": "CUST-2205",
+    "name": "Coastal Crumbs Bakery",
+    "address": "3 Beach Road, Besant Nagar",
+    "lat": 13.0002,
+    "lon": 80.2668,
+    "accessNotes": "Call on arrival",
+    "tenantId": "meravix-broadband"
+  }
+]

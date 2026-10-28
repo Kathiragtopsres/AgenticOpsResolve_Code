@@ -1,0 +1,209 @@
+{
+  "scenario": "S1",
+  "caseId": "SR-2026-000184",
+  "expectedStates": [
+    "OPEN",
+    "CONTEXT_READY",
+    "DIAGNOSING",
+    "REMOTE_FIX_IN_PROGRESS",
+    "PLANNING_FIELD",
+    "SCHEDULED",
+    "AT_RISK",
+    "SCHEDULED",
+    "IN_SERVICE",
+    "VERIFYING",
+    "CLOSED"
+  ],
+  "expectedSteps": [
+    {
+      "n": 1,
+      "trigger": "samples/inputs/iot/s1_telemetry_breach.json",
+      "expect": {
+        "event": "Case Opened",
+        "priority": "P2"
+      }
+    },
+    {
+      "n": 2,
+      "tool": "getAssetContext",
+      "args": {
+        "assetId": "CHILLER-8821"
+      }
+    },
+    {
+      "n": 3,
+      "tool": "retrieveTroubleshootingKnowledge",
+      "args": {
+        "assetModel": "CX-500"
+      },
+      "expectOutputContains": "SB-CX500-07",
+      "mustNotContain": "SB-CX500-03"
+    },
+    {
+      "n": 4,
+      "tool": "executeSafeRemoteAction",
+      "args": {
+        "action": "CONTROLLER_SOFT_RESET"
+      },
+      "policy": "PERMIT",
+      "expectOutput": "samples/outputs/tools/executeSafeRemoteAction.response.json"
+    },
+    {
+      "n": 5,
+      "tool": "checkServiceEntitlement",
+      "expectOutput": "samples/outputs/tools/checkServiceEntitlement.response.json"
+    },
+    {
+      "n": 6,
+      "tool": "findAndReservePart",
+      "args": {
+        "mode": "HOLD"
+      },
+      "policy": "PERMIT",
+      "expectOutput": "samples/outputs/tools/findAndReservePart.HOLD.response.json"
+    },
+    {
+      "n": 7,
+      "tool": "proposeAppointmentSlots",
+      "expectOutput": "samples/outputs/tools/proposeAppointmentSlots.response.json"
+    },
+    {
+      "n": 8,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "URGENT_ALERT"
+      },
+      "channels": [
+        "RCS",
+        "SMS"
+      ],
+      "expectPayload": [
+        "samples/outputs/rcs/M01_predicted_failure_card.json",
+        "samples/outputs/sms/messages.json#SMS-P1"
+      ]
+    },
+    {
+      "n": 9,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "APPOINTMENT_OPTIONS"
+      },
+      "channels": [
+        "RCS"
+      ],
+      "expectPayload": "samples/outputs/rcs/M03_slot_carousel.json",
+      "wait": "CUSTOMER"
+    },
+    {
+      "n": 10,
+      "trigger": "samples/inputs/sns/rcs_postback_book_slot.json",
+      "expectNormalized": "samples/outputs/normalized/inbound_postback_book_slot.json"
+    },
+    {
+      "n": 11,
+      "tool": "createServiceAppointment",
+      "args": {
+        "slotId": "SLT-1",
+        "technicianId": "TECH-204"
+      },
+      "policy": "PERMIT",
+      "expectOutput": "samples/outputs/tools/createServiceAppointment.response.json"
+    },
+    {
+      "n": 12,
+      "tool": "findAndReservePart",
+      "args": {
+        "mode": "CONFIRM"
+      }
+    },
+    {
+      "n": 13,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "CONFIRMATION"
+      },
+      "channels": [
+        "RCS",
+        "EMAIL"
+      ],
+      "expectPayload": "samples/outputs/rcs/M04_confirmation.json"
+    },
+    {
+      "n": 14,
+      "trigger": "samples/inputs/eventbridge/timer_eta_checkpoint.json",
+      "expect": {
+        "risk": "HIGH",
+        "slackMin": -55,
+        "slaSlackMin": -40,
+        "state": "AT_RISK"
+      }
+    },
+    {
+      "n": 15,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "RECOVERY_OFFER"
+      },
+      "expectPayload": "samples/outputs/rcs/M06_recovery_offer.json",
+      "wait": "CUSTOMER"
+    },
+    {
+      "n": 16,
+      "trigger": "samples/inputs/sns/rcs_postback_recovery_accept.json"
+    },
+    {
+      "n": 17,
+      "tool": "reassignTechnician",
+      "args": {
+        "toTechnicianId": "TECH-311",
+        "reason": "DELAY"
+      },
+      "expectOutput": "samples/outputs/tools/reassignTechnician.response.json"
+    },
+    {
+      "n": 18,
+      "trigger": "samples/inputs/eventbridge/work_order_completed.json"
+    },
+    {
+      "n": 19,
+      "tool": "getAssetHealth",
+      "expect": {
+        "withinNormal": true
+      },
+      "telemetryProfile": "telemetry/profiles/s1_chiller_repaired.csv"
+    },
+    {
+      "n": 20,
+      "tool": "generateServiceReport",
+      "expectArtifact": "samples/outputs/reports/service_report_SR-2026-000184.html"
+    },
+    {
+      "n": 21,
+      "tool": "sendCustomerMessage",
+      "args": {
+        "intent": "REPORT"
+      },
+      "channels": [
+        "EMAIL"
+      ],
+      "expectPayload": "samples/outputs/ses/template_data_s1_report.json"
+    },
+    {
+      "n": 22,
+      "tool": "closeServiceCase",
+      "policy": "PERMIT"
+    }
+  ],
+  "expectedKpis": {
+    "customerTaps": 2,
+    "callsRequired": 0,
+    "restoreByMet": true,
+    "recoveryApplied": true,
+    "channelsUsed": [
+      "RCS",
+      "SMS",
+      "EMAIL"
+    ]
+  },
+  "matching": "Steps must occur in order; tool arguments compared on listed keys only; timestamps compared as durations under the demo clock."
+}

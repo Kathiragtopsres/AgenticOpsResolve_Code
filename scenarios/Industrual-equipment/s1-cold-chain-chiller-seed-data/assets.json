@@ -1,0 +1,45 @@
+[
+  {
+    "assetId": "CHILLER-8821",
+    "siteId": "PLANT-A",
+    "model": "CX-500",
+    "serial": "CX5-22-08821",
+    "firmware": "4.2.1",
+    "installDate": "2022-03-14",
+    "criticality": "HIGH",
+    "telemetryTopic": "opsresolve/telemetry/CHILLER-8821",
+    "safeActions": [
+      "CONTROLLER_SOFT_RESET",
+      "RECALIBRATE_SENSOR",
+      "SET_ECO_MODE"
+    ]
+  },
+  {
+    "assetId": "CHILLER-8822",
+    "siteId": "PLANT-A",
+    "model": "CX-500",
+    "serial": "CX5-22-08822",
+    "firmware": "4.2.1",
+    "installDate": "2022-03-14",
+    "criticality": "HIGH",
+    "telemetryTopic": "opsresolve/telemetry/CHILLER-8822",
+    "safeActions": [
+      "CONTROLLER_SOFT_RESET",
+      "RECALIBRATE_SENSOR",
+      "SET_ECO_MODE"
+    ]
+  },
+  {
+    "assetId": "AHU-9011",
+    "siteId": "PLANT-A",
+    "model": "AHU-90",
+    "serial": "AH9-21-09011",
+    "firmware": "2.0.7",
+    "installDate": "2021-11-02",
+    "criticality": "MEDIUM",
+    "telemetryTopic": "opsresolve/telemetry/AHU-9011",
+    "safeActions": [
+      "SET_ECO_MODE"
+    ]
+  }
+]

@@ -1,0 +1,190 @@
+[
+  {
+    "id": "POL-01",
+    "action": "findAndReservePart",
+    "input": {
+      "estimatedUnitValueUsd": 420,
+      "covered": true
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-02",
+    "action": "findAndReservePart",
+    "input": {
+      "estimatedUnitValueUsd": 1240,
+      "covered": true
+    },
+    "expected": "DENY",
+    "note": "DENY on thresholds is mapped to NEEDS_APPROVAL by adapters"
+  },
+  {
+    "id": "POL-03",
+    "action": "findAndReservePart",
+    "input": {
+      "estimatedUnitValueUsd": 95,
+      "covered": false
+    },
+    "expected": "DENY",
+    "note": "DENY on thresholds is mapped to NEEDS_APPROVAL by adapters"
+  },
+  {
+    "id": "POL-04",
+    "action": "executeSafeRemoteAction",
+    "input": {
+      "action": "CONTROLLER_SOFT_RESET"
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-05",
+    "action": "executeSafeRemoteAction",
+    "input": {
+      "action": "BYPASS_HP_INTERLOCK"
+    },
+    "expected": "DENY",
+    "note": "DENY on thresholds is mapped to NEEDS_APPROVAL by adapters"
+  },
+  {
+    "id": "POL-06",
+    "action": "executeSafeRemoteAction",
+    "input": {
+      "action": "CRYO_COMPRESSOR_RESTART"
+    },
+    "expected": "DENY",
+    "note": "DENY on thresholds is mapped to NEEDS_APPROVAL by adapters"
+  },
+  {
+    "id": "POL-07",
+    "action": "executeSafeRemoteAction",
+    "input": {
+      "action": "CRYO_COMPRESSOR_RESTART",
+      "approvalId": "APR-0233-1"
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-08",
+    "action": "createServiceAppointment",
+    "input": {
+      "consentRef": "opsr1|SR-2026-000184|BOOK_SLOT|SLT-1|...",
+      "technicianCertValid": true
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-09",
+    "action": "createServiceAppointment",
+    "input": {
+      "consentRef": "Book 14:00",
+      "technicianCertValid": true
+    },
+    "expected": "DENY",
+    "note": ""
+  },
+  {
+    "id": "POL-10",
+    "action": "createServiceAppointment",
+    "input": {
+      "consentRef": "opsr1|SR-2026-000233|BOOK_SLOT|SLT-M1|...",
+      "technicianCertValid": false
+    },
+    "expected": "DENY",
+    "note": ""
+  },
+  {
+    "id": "POL-11",
+    "action": "applyServiceCredit",
+    "input": {
+      "amountUsd": 20,
+      "autoApplyCapUsd": 50
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-12",
+    "action": "applyServiceCredit",
+    "input": {
+      "amountUsd": 5000,
+      "autoApplyCapUsd": 50
+    },
+    "expected": "DENY",
+    "note": "DENY on thresholds is mapped to NEEDS_APPROVAL by adapters"
+  },
+  {
+    "id": "POL-13",
+    "action": "closeServiceCase",
+    "input": {
+      "verification": {
+        "telemetryNormal": false
+      }
+    },
+    "expected": "DENY",
+    "note": ""
+  },
+  {
+    "id": "POL-14",
+    "action": "closeServiceCase",
+    "input": {
+      "verification": {
+        "telemetryNormal": true
+      }
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-15",
+    "action": "getAssetContext",
+    "input": {
+      "assetId": "CHILLER-8821"
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-16",
+    "action": "reassignTechnician",
+    "input": {
+      "consentRef": "opsr1|SR-2026-000184|RECOVERY_ACCEPT|ALT_TECH_311|...",
+      "technicianCertValid": true
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-17",
+    "action": "dispatchCourier",
+    "input": {
+      "partCustomerReplaceable": true,
+      "courierCovered": true
+    },
+    "expected": "ALLOW",
+    "note": ""
+  },
+  {
+    "id": "POL-18",
+    "action": "dispatchCourier",
+    "input": {
+      "partCustomerReplaceable": false,
+      "courierCovered": true
+    },
+    "expected": "DENY",
+    "note": "Part must be customer-replaceable: a technician visit instead"
+  },
+  {
+    "id": "POL-19",
+    "action": "dispatchCourier",
+    "input": {
+      "partCustomerReplaceable": true,
+      "courierCovered": false
+    },
+    "expected": "DENY",
+    "note": "Contract must cover courier replacement: a technician visit instead"
+  }
+]

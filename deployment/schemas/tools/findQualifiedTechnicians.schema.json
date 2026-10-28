@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "findQualifiedTechnicians",
+  "x-opsresolve-kind": "read",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "requiredSkill": {
+        "type": "string"
+      },
+      "assetModel": {
+        "type": "string"
+      },
+      "region": {
+        "type": "string"
+      },
+      "windowStart": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "windowEnd": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "regionsAllowed": {
+        "type": "array"
+      }
+    },
+    "required": [
+      "requiredSkill",
+      "assetModel",
+      "region"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "candidates": {
+        "type": "array"
+      },
+      "rejected": {
+        "type": "object"
+      }
+    }
+  }
+}

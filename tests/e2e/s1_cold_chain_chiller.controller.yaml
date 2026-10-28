@@ -1,0 +1,22 @@
+scenario: S1
+reset: true
+demoClockFactor: 60
+seed: seed/s1-cold-chain-chiller
+steps:
+  - startTelemetry: telemetry/profiles/s1_chiller_degrading.csv
+  - waitFor: {event: "Case Opened", timeoutSec: 10}
+  - waitFor: {toolCall: executeSafeRemoteAction}
+  - switchTelemetry: telemetry/profiles/s1_chiller_post_reset_still_abnormal.csv
+  - waitFor: {outbound: {channel: RCS, intent: APPOINTMENT_OPTIONS}, timeoutSec: 30}
+  - injectInbound: samples/inputs/sns/rcs_postback_book_slot.json   # or tap on the real test device
+  - assertState: SCHEDULED
+  - setFaultFlag: {technician: TECH-204, jobOverrunMin: 100}
+  - fireTimer: ETA_CHECKPOINT
+  - assertState: AT_RISK
+  - waitFor: {outbound: {channel: RCS, intent: RECOVERY_OFFER}}
+  - injectInbound: samples/inputs/sns/rcs_postback_recovery_accept.json
+  - assertToolCall: {name: reassignTechnician, args: {toTechnicianId: TECH-311}}
+  - publish: samples/inputs/eventbridge/work_order_completed.json
+  - switchTelemetry: telemetry/profiles/s1_chiller_repaired.csv
+  - waitFor: {state: CLOSED, timeoutSec: 60}
+  - compareGolden: golden/s1_cold_chain_chiller.golden.json

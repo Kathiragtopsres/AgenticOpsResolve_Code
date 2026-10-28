@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getAssetHealth",
+  "x-opsresolve-kind": "read",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "assetId": {
+        "type": "string"
+      },
+      "windowMin": {
+        "type": "integer",
+        "minimum": 5,
+        "maximum": 1440
+      }
+    },
+    "required": [
+      "assetId"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "assetId": {
+        "type": "string"
+      },
+      "latest": {
+        "type": "object"
+      },
+      "trend": {
+        "type": "string"
+      },
+      "withinNormal": {
+        "type": "boolean"
+      },
+      "alarms": {
+        "type": "array"
+      }
+    }
+  }
+}

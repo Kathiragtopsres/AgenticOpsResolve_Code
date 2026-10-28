@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Diagnostic Agent output",
+  "type": "object",
+  "properties": {
+    "probableCauses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "cause": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidenceRefs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "cause",
+          "confidence",
+          "evidenceRefs"
+        ]
+      }
+    },
+    "remoteActionCandidate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "safetyFlag": {
+      "type": "boolean"
+    },
+    "clarifyingQuestion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "recommendedPath": {
+      "enum": [
+        "REMOTE",
+        "FIELD",
+        "ESCALATE",
+        "NEEDS_APPROVAL"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "probableCauses",
+    "safetyFlag",
+    "recommendedPath"
+  ]
+}

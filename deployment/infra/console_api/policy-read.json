@@ -1,0 +1,66 @@
+{
+    "Version":  "2012-10-17",
+    "Statement":  [
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ReadCaseStoreTables",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-cases/index/*",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-approvals",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-conversations"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:Query",
+                                         "dynamodb:Scan"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ReadMockGetItem",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-customers",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-assets",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-sites",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-technicians"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:GetItem"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ReadMockScan",
+                          "Resource":  [
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-contacts",
+                                           "arn:aws:dynamodb:us-east-1:[AWS-ACCOUNT-NUMBER]:table/opsresolve-dev-mock-contracts"
+                                       ],
+                          "Action":  [
+                                         "dynamodb:Scan"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "ReadFieldUploads",
+                          "Resource":  [
+                                           "arn:aws:s3:::opsresolve-dev-field-uploads/field/*"
+                                       ],
+                          "Action":  [
+                                         "s3:GetObject"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Sid":  "OwnLogGroup",
+                          "Resource":  [
+                                           "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-console-read",
+                                           "arn:aws:logs:us-east-1:[AWS-ACCOUNT-NUMBER]:log-group:/aws/lambda/opsresolve-dev-console-read:*"
+                                       ],
+                          "Action":  [
+                                         "logs:CreateLogGroup",
+                                         "logs:CreateLogStream",
+                                         "logs:PutLogEvents"
+                                     ]
+                      }
+                  ]
+}

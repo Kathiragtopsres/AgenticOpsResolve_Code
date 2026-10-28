@@ -1,0 +1,57 @@
+[
+  {
+    "workOrderId": "WO-82001",
+    "assetId": "ONT-55012",
+    "openedAt": "2024-02-10T09:00:00Z",
+    "type": "INSTALL",
+    "symptom": "New fibre install",
+    "resolution": "ONT-X200 installed and activated",
+    "technicianId": "TEL-802",
+    "firstTimeFix": true,
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "workOrderId": "WO-82002",
+    "assetId": "RTR-55013",
+    "openedAt": "2024-02-10T10:30:00Z",
+    "type": "INSTALL",
+    "symptom": "Router setup",
+    "resolution": "HGW-7 paired and Wi-Fi configured",
+    "technicianId": "TEL-802",
+    "firstTimeFix": true,
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "workOrderId": "WO-82003",
+    "assetId": "RTR-55013",
+    "openedAt": "2025-03-11T11:00:00Z",
+    "type": "CORRECTIVE",
+    "symptom": "Wi-Fi drops",
+    "resolution": "Router swapped for new HGW-7",
+    "technicianId": "TEL-803",
+    "firstTimeFix": true,
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "workOrderId": "WO-82004",
+    "assetId": "ONT-55012",
+    "openedAt": "2025-06-24T14:00:00Z",
+    "type": "CORRECTIVE",
+    "symptom": "Slow speeds",
+    "resolution": "Fibre connector cleaned and re-seated",
+    "technicianId": "TEL-804",
+    "firstTimeFix": true,
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "workOrderId": "WO-82005",
+    "assetId": "ONT-55012",
+    "openedAt": "2026-01-15T09:00:00Z",
+    "type": "PREVENTIVE",
+    "symptom": "Annual line check",
+    "resolution": "Optical power within range",
+    "technicianId": "TEL-801",
+    "firstTimeFix": true,
+    "tenantId": "meravix-broadband"
+  }
+]

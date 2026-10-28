@@ -1,0 +1,8 @@
+{
+  "executionId": "EXE-3301",
+  "status": "EXECUTED",
+  "postActionTelemetry": {
+    "compressorPressureVar": 0.21,
+    "withinNormal": false
+  }
+}

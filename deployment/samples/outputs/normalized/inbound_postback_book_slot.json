@@ -1,0 +1,15 @@
+{
+  "channel": "RCS",
+  "contactId": "CON-77",
+  "caseId": "SR-2026-000184",
+  "kind": "POSTBACK",
+  "intent": "BOOK_SLOT",
+  "optionId": "SLT-1",
+  "text": "Book 14:00",
+  "receivedAt": "2026-10-20T10:42:11Z",
+  "providerMessageId": "12025550143-2026-10-20T10:42:11.000+0000",
+  "verified": true,
+  "guardrail": {
+    "action": "NONE"
+  }
+}

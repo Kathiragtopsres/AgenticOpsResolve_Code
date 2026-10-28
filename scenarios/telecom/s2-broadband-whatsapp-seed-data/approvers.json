@@ -1,0 +1,21 @@
+[
+  {
+    "approverId": "APR-21",
+    "name": "Care Team Lead South",
+    "phone": "+12025550180",
+    "scope": [
+      "SERVICE_CREDIT_OVER_CAP"
+    ],
+    "secondary": "APR-22",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "approverId": "APR-22",
+    "name": "Broadband Care Manager",
+    "phone": "+12025550181",
+    "scope": [
+      "*"
+    ],
+    "tenantId": "meravix-broadband"
+  }
+]

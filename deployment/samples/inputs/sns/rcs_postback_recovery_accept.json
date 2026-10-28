@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "Sns": {
+        "Type": "Notification",
+        "TopicArn": "arn:aws:sns:us-east-1:111122223333:opsresolve-demo-inbound-rcs-sms",
+        "MessageId": "00000000-0000-0000-0000-000000000001",
+        "Timestamp": "2026-10-20T10:42:11.000Z",
+        "Message": "{\"originationNumber\": \"+12025550143\", \"destinationNumber\": \"rcs-a1b2c3d4\", \"messageBody\": \"{\\\"type\\\": \\\"SUGGESTION\\\", \\\"text\\\": \\\"Accept alternate\\\", \\\"postbackData\\\": \\\"opsr1|SR-2026-000184|RECOVERY_ACCEPT|ALT_TECH_311|1792508400|r7c2x9|de66a33f38b38545b6fdda3467c35659\\\"}\", \"inboundMessageId\": \"12025550143-rec\"}"
+      }
+    }
+  ]
+}

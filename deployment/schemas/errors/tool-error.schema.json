@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tool error envelope",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "VALIDATION_ERROR",
+            "NOT_FOUND",
+            "CONFLICT_STATE",
+            "PART_UNAVAILABLE",
+            "NO_TECHNICIAN",
+            "POLICY_DENIED",
+            "NEEDS_APPROVAL",
+            "DOWNSTREAM_TIMEOUT",
+            "THROTTLED",
+            "CHANNEL_NOT_CONSENTED",
+            "CHANNEL_UNAVAILABLE",
+            "CERT_INVALID"
+          ]
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object"
+        },
+        "correlationId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "retryable",
+        "message"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "error"
+  ]
+}

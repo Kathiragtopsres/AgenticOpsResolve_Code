@@ -1,0 +1,7 @@
+{
+  "/opsresolve/demo/models/reasoning": "us.amazon.nova-2-lite-v1:0",
+  "/opsresolve/demo/models/lightweight": "us.amazon.nova-2-lite-v1:0",
+  "/opsresolve/demo/demoClockFactor": "60",
+  "/opsresolve/demo/prompts/version": "v1",
+  "/opsresolve/demo/flags/WHATSAPP_ENABLED": "true"
+}

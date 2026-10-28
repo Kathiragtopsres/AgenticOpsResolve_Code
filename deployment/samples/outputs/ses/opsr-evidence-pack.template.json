@@ -1,0 +1,8 @@
+{
+  "TemplateName": "opsr-evidence-pack",
+  "TemplateContent": {
+    "Subject": "Evidence pack {{caseId}} - {{assetName}}",
+    "Html": "<h1>Evidence pack {{caseId}}</h1><p>Approvals: {{approvals}}</p><p>Engineer certification: {{certification}}</p><p>Telemetry before/after: {{telemetry}}</p><p><a href=\"{{reportUrl}}\">Full evidence pack</a></p>",
+    "Text": "Evidence pack {{caseId}}"
+  }
+}

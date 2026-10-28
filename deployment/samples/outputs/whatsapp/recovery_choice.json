@@ -1,0 +1,29 @@
+{
+  "messaging_product": "whatsapp",
+  "to": "12025550171",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "body": {
+      "text": "The replacement box reserved for your visit isn't available at the depot. Two options: a courier brings a new box today (about 2.5 hours) and I guide you through a 5-minute swap, or a technician visits tomorrow at 09:00."
+    },
+    "action": {
+      "buttons": [
+        {
+          "type": "reply",
+          "reply": {
+            "id": "[signed:RECOVERY_ACCEPT:COURIER]",
+            "title": "Courier today"
+          }
+        },
+        {
+          "type": "reply",
+          "reply": {
+            "id": "[signed:RECOVERY_ACCEPT:VISIT_TOMORROW]",
+            "title": "Technician tomorrow"
+          }
+        }
+      ]
+    }
+  }
+}

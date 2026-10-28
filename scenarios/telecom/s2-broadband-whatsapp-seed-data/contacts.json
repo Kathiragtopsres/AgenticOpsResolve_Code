@@ -1,0 +1,92 @@
+[
+  {
+    "contactId": "CON-2201",
+    "customerId": "CUST-2201",
+    "name": "Priya Nair",
+    "phone": "+12025550171",
+    "whatsappId": "12025550171",
+    "email": "priya@nairdesign.example",
+    "preferredChannel": "WHATSAPP",
+    "consent": {
+      "RCS": "UNKNOWN",
+      "SMS": "OPTED_IN",
+      "WHATSAPP": "OPTED_IN",
+      "EMAIL": "OPTED_IN"
+    },
+    "isPrimary": true,
+    "role": "Account holder",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contactId": "CON-2202",
+    "customerId": "CUST-2202",
+    "name": "Karthik Menon",
+    "phone": "+12025550172",
+    "whatsappId": "12025550172",
+    "email": "karthikmenon@example.test",
+    "preferredChannel": "WHATSAPP",
+    "consent": {
+      "RCS": "UNKNOWN",
+      "SMS": "OPTED_IN",
+      "WHATSAPP": "OPTED_IN",
+      "EMAIL": "OPTED_IN"
+    },
+    "isPrimary": true,
+    "role": "Account holder",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contactId": "CON-2203",
+    "customerId": "CUST-2203",
+    "name": "Dr. Meera Pillai",
+    "phone": "+12025550173",
+    "whatsappId": "12025550173",
+    "email": "drmeerapillai@example.test",
+    "preferredChannel": "WHATSAPP",
+    "consent": {
+      "RCS": "UNKNOWN",
+      "SMS": "OPTED_IN",
+      "WHATSAPP": "OPTED_IN",
+      "EMAIL": "OPTED_IN"
+    },
+    "isPrimary": true,
+    "role": "Account holder",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contactId": "CON-2204",
+    "customerId": "CUST-2204",
+    "name": "Ananya Shah",
+    "phone": "+12025550174",
+    "whatsappId": "12025550174",
+    "email": "ananyashah@example.test",
+    "preferredChannel": "WHATSAPP",
+    "consent": {
+      "RCS": "UNKNOWN",
+      "SMS": "OPTED_IN",
+      "WHATSAPP": "OPTED_IN",
+      "EMAIL": "OPTED_IN"
+    },
+    "isPrimary": true,
+    "role": "Account holder",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contactId": "CON-2205",
+    "customerId": "CUST-2205",
+    "name": "Rahul Varma",
+    "phone": "+12025550175",
+    "whatsappId": "12025550175",
+    "email": "rahulvarma@example.test",
+    "preferredChannel": "WHATSAPP",
+    "consent": {
+      "RCS": "UNKNOWN",
+      "SMS": "OPTED_IN",
+      "WHATSAPP": "OPTED_IN",
+      "EMAIL": "OPTED_IN"
+    },
+    "isPrimary": true,
+    "role": "Account holder",
+    "tenantId": "meravix-broadband"
+  }
+]

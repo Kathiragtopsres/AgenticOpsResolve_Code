@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "CHANNEL_NOT_CONSENTED",
+    "retryable": false,
+    "message": "Contact CON-79 has not opted in to RCS"
+  }
+}

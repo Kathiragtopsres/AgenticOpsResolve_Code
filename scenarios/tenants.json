@@ -1,0 +1,195 @@
+[
+  {
+    "pk": "TENANT#meravix-foods",
+    "sk": "META",
+    "tenantId": "meravix-foods",
+    "displayName": "Meravix Foods",
+    "scenario": "S1",
+    "defaultRegion": "SOUTH",
+    "primaryChannel": "WHATSAPP",
+    "caseOpening": {
+      "customerMessageOpensCase": false
+    },
+    "scenarioButtons": [
+      "telemetry",
+      "technician-delay",
+      "part-shortage",
+      "complete-work-order"
+    ],
+    "telemetryProfiles": [
+      {
+        "id": "degrading",
+        "label": "Predictive failure — CX-500",
+        "opensCase": true,
+        "streaming": true
+      },
+      {
+        "id": "post_reset_abnormal",
+        "label": "Still abnormal after remote reset — CX-500",
+        "opensCase": true,
+        "streaming": false
+      },
+      {
+        "id": "repaired",
+        "label": "Repaired / back to normal — CX-500",
+        "opensCase": false,
+        "streaming": false
+      },
+      {
+        "id": "normal",
+        "label": "Normal operation — CX-500",
+        "opensCase": false,
+        "streaming": false
+      }
+    ],
+    "demoAssetId": "CHILLER-8821",
+    "demoContactId": "CON-77",
+    "vocabulary": {
+      "assetNoun": "chiller",
+      "healthNoun": "telemetry"
+    }
+  },
+  {
+    "pk": "TENANT#meravix-foods",
+    "sk": "MODEL#CX-500",
+    "jobDurationMin": 120,
+    "category": "Refrigeration",
+    "subcategory": "Cold-chain chiller",
+    "assignedQueue": "Cold-Chain Field Service · South",
+    "requiredSkill": "HVAC-CHILLER-L2",
+    "healthSource": "TELEMETRY",
+    "healthRules": {
+      "compressorPressureVarMax": 0.18,
+      "supplyTempCMax": 9.0
+    }
+  },
+  {
+    "pk": "TENANT#meravix-foods",
+    "sk": "MODEL#AHU-90",
+    "jobDurationMin": 120,
+    "category": "HVAC",
+    "subcategory": "Air handling unit",
+    "assignedQueue": "HVAC Field Service · South",
+    "requiredSkill": "HVAC-AHU-L2",
+    "healthSource": "TELEMETRY"
+  },
+  {
+    "pk": "CUSTOMER#CUST-1042",
+    "sk": "META",
+    "tenantId": "meravix-foods"
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "META",
+    "tenantId": "meravix-broadband",
+    "displayName": "Meravix Broadband",
+    "scenario": "S2",
+    "defaultRegion": "SOUTH",
+    "primaryChannel": "WHATSAPP",
+    "caseOpening": {
+      "customerMessageOpensCase": true,
+      "defaultAssetModel": "ONT-X200"
+    },
+    "demo": {
+      "demoDowntimeHours": 6
+    },
+    "serviceCredit": {
+      "perHourUsd": 5,
+      "autoApplyCapUsd": 50,
+      "minOutageHours": 4,
+      "approverRole": "CARE_TEAM_LEAD"
+    },
+    "scenarioButtons": [
+      "customer-message",
+      "part-shortage",
+      "complete-work-order"
+    ],
+    "telemetryProfiles": [],
+    "demoAssetId": "ONT-55012",
+    "demoContactId": "CON-2201",
+    "ackText": "Thanks, we're checking your connection now.",
+    "vocabulary": {
+      "assetNoun": "fibre box",
+      "healthNoun": "line diagnostics"
+    },
+    "recovery": {
+      "courierSelfInstall": true
+    }
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "MODEL#ONT-X200",
+    "jobDurationMin": 120,
+    "category": "Broadband",
+    "subcategory": "Fibre ONT",
+    "assignedQueue": "Broadband Home Support · South",
+    "requiredSkill": "FIBRE-INSTALL",
+    "healthSource": "NETWORK",
+    "healthRules": {
+      "opticalRxDbmMin": -25,
+      "opticalRxDbmMax": -8,
+      "fecErrorsPerMinMax": 50,
+      "resetsLast24hMax": 2
+    },
+    "defaultPartId": "ONT-X200"
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "MODEL#HGW-7",
+    "jobDurationMin": 120,
+    "category": "Broadband",
+    "subcategory": "Home gateway",
+    "assignedQueue": "Broadband Home Support · South",
+    "healthSource": "NETWORK"
+  },
+  {
+    "pk": "CUSTOMER#CUST-2201",
+    "sk": "META",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "pk": "CUSTOMER#CUST-2202",
+    "sk": "META",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "pk": "CUSTOMER#CUST-2203",
+    "sk": "META",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "pk": "CUSTOMER#CUST-2204",
+    "sk": "META",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "pk": "CUSTOMER#CUST-2205",
+    "sk": "META",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "PROMPT#DiagnosticAgent",
+    "rules": "Domain: home/business fibre broadband. First confirm there is no area outage (getAssetHealth `areaOutage`), then read line stats (optical power, FEC errors, resets). ONT_REBOOT is the safe remote action. Ask the customer at most 2 tap questions (e.g. \"Are the lights on the fibre box steady?\", \"Are all devices affected?\"). If errors persist after the reboot, recommend FIELD with suspected part ONT-X200. Never ask in the \"Plan the field work\" task."
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "PROMPT#ServiceRecoveryAgent",
+    "rules": "When the visit is at risk because of a part shortage and the part is customer-replaceable and covered by the contract's courierReplacement, offer COURIER_SELF_INSTALL first (courier today, customer self-install) and TECH_TOMORROW (technician visit tomorrow) second."
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "PROMPT#CompletionAgent",
+    "rules": "Before closing, the downtime service credit is applied per the service credit policy (outages over 4 hours, $5 per hour, auto-apply up to the cap, above the cap a care team lead approves). Report credit status in the closing summary."
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "PROMPT#CommunicationAgent",
+    "rules": "Tone: home subscriber or small business owner, plain short words. Say \"the fibre box\" or \"your router\", never bare \"ONT\" or jargon. When the remote fix did not hold, open the appointment-options message by saying you are back online for now but the box looks faulty, and a visit is needed."
+  },
+  {
+    "pk": "TENANT#meravix-broadband",
+    "sk": "PROMPT#KnowledgeAgent",
+    "rules": "Query examples: \"ONT-X200 optical power low reboot\", \"ONT-X200 replacement self-install\"."
+  }
+]

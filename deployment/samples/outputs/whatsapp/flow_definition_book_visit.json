@@ -1,0 +1,95 @@
+{
+  "_note": "Skeleton of the 'Book a service visit' Flow JSON; align with Meta Flow JSON version supported by End User Messaging Social.",
+  "version": "[flow json version]",
+  "data_api_version": "3.0",
+  "routing_model": {
+    "PICK_DATE": [
+      "PICK_SLOT"
+    ],
+    "PICK_SLOT": [
+      "CONFIRM"
+    ],
+    "CONFIRM": []
+  },
+  "screens": [
+    {
+      "id": "PICK_DATE",
+      "title": "Choose a date",
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "DatePicker",
+            "name": "date",
+            "label": "Visit date"
+          },
+          {
+            "type": "Footer",
+            "label": "Next",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "date": "${form.date}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "PICK_SLOT",
+      "title": "Pick a time",
+      "data": {
+        "slots": {
+          "type": "array",
+          "__example__": []
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "RadioButtonsGroup",
+            "name": "slotId",
+            "data-source": "${data.slots}"
+          },
+          {
+            "type": "Footer",
+            "label": "Next",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "slotId": "${form.slotId}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "CONFIRM",
+      "title": "Confirm",
+      "terminal": true,
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "TextInput",
+            "name": "accessNotes",
+            "label": "Access notes"
+          },
+          {
+            "type": "Footer",
+            "label": "Confirm booking",
+            "on-click-action": {
+              "name": "complete",
+              "payload": {
+                "accessNotes": "${form.accessNotes}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

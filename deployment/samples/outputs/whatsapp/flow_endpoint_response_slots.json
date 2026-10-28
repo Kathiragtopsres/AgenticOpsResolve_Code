@@ -1,0 +1,20 @@
+{
+  "version": "3.0",
+  "screen": "PICK_SLOT",
+  "data": {
+    "slots": [
+      {
+        "id": "SLT-W1",
+        "title": "Wed 21 Oct, 09:00-11:00 - A. Iyer"
+      },
+      {
+        "id": "SLT-W2",
+        "title": "Wed 21 Oct, 11:00-13:00 - B. Joseph"
+      },
+      {
+        "id": "SLT-W3",
+        "title": "Wed 21 Oct, 14:00-16:00 - C. Reddy"
+      }
+    ]
+  }
+}

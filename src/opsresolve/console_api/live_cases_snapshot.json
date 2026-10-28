@@ -1,0 +1,482 @@
+[
+ {
+  "summary": "Case opened",
+  "detail": {
+   "trigger": {
+    "eventId": "evt-test-invoker-001",
+    "type": "TELEMETRY",
+    "name": null
+   }
+  },
+  "toolName": null,
+  "correlationId": "corr-test-invoker-001",
+  "sk": "EVT#2026-09-25T14:24:30Z#evt-fcba83d2f6fb",
+  "policyDecision": null,
+  "pk": "CASE#SR-7D75DF8B44",
+  "actor": {
+   "type": "SYSTEM",
+   "name": "CaseOpener"
+  },
+  "type": "CASE_OPENED"
+ },
+ {
+  "summary": "Delegated to AssetContextAgent: Assemble customer/asset/contract context before anything else.",
+  "detail": {
+   "expectedTools": [
+    "getAssetContext",
+    "getServiceHistory"
+   ],
+   "specialist": "AssetContextAgent",
+   "outcome": {
+    "summary": "## Task Outcome Report\n\nI have completed the requested tool calls to assemble customer/asset/contract context, but encountered the following results:\n\n### Asset Context\n- **Status**: Failed to retrieve\n- **Error**: Asset ID \"CHILLER-8821\" was not found in the system\n- **Error Code**: NOT_FOUND (non-retryable)\n- **Correlation ID**: corr-test-invoker-001\n\n### Service History\n- **Status**: Successfully retrieved\n- **Asset ID**: CHILLER-8821\n- **Work Orders**: No prior work orders found (empty list)\n\n### Summary\nThe context assembly was only partially successful. While the service history call completed without errors, it returned no historical work orders for this asset. More critically, the asset context retrieval failed because the asset ID \"CHILLER-8821\" is not recognized in the system. This suggests either:\n\n1. The asset ID in the case context is incorrect\n2. The asset has not been properly registered in the system\n3. There may be a data synchronization issue\n\nWithout the asset context, we lack essential information about the customer details, site information, asset specifications, and contract entitlements that would normally be available for case processing.\n"
+   }
+  },
+  "toolName": null,
+  "correlationId": "corr-test-invoker-001",
+  "sk": "EVT#2026-09-25T14:24:44Z#evt-877f779a6f2d",
+  "policyDecision": null,
+  "pk": "CASE#SR-7D75DF8B44",
+  "actor": {
+   "name": "ServiceResolutionOrchestrator",
+   "type": "AGENT"
+  },
+  "type": "SPECIALIST_DELEGATED"
+ },
+ {
+  "summary": "OPEN -> CONTEXT_READY (New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).)",
+  "detail": {
+   "to": "CONTEXT_READY",
+   "from": "OPEN",
+   "reason": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY)."
+  },
+  "toolName": null,
+  "correlationId": "corr-test-invoker-001",
+  "sk": "EVT#2026-09-25T14:24:44Z#evt-c62f307a91bd",
+  "policyDecision": null,
+  "pk": "CASE#SR-7D75DF8B44",
+  "actor": {
+   "type": "AGENT",
+   "name": "ServiceResolutionOrchestrator",
+   "promptVersion": "orchestrator.v1.md"
+  },
+  "type": "CASE_STATE_CHANGED"
+ },
+ {
+  "gsi2sk": "2026-09-25T14:24:30Z",
+  "version": 2,
+  "gsi1sk": "P4#2026-09-25T14:24:30Z",
+  "closedAt": null,
+  "createdAt": "2026-09-25T14:24:30Z",
+  "priority": null,
+  "restoreBy": null,
+  "caseId": "SR-7D75DF8B44",
+  "state": "CONTEXT_READY",
+  "assetId": "CHILLER-8821",
+  "correlationId": "corr-test-invoker-001",
+  "sk": "META",
+  "pk": "CASE#SR-7D75DF8B44",
+  "gsi1pk": "STATE#CONTEXT_READY",
+  "customerId": "CUST-1042",
+  "gsi2pk": "ASSET#CHILLER-8821"
+ },
+ {
+  "sk": "PLAN#v1",
+  "rationale": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+  "promptVersion": "rule-based-v1",
+  "goals": [
+   {
+    "specialist": "AssetContextAgent",
+    "expectedTools": [
+     "getAssetContext",
+     "getServiceHistory"
+    ],
+    "rationale": "Assemble customer/asset/contract context before anything else."
+   }
+  ],
+  "pk": "CASE#SR-7D75DF8B44"
+ },
+ {
+  "summary": "Case opened",
+  "detail": {
+   "trigger": {
+    "type": "TELEMETRY",
+    "name": null,
+    "eventId": "evt-sitewise-002b01de7514"
+   }
+  },
+  "toolName": null,
+  "correlationId": "evt-sitewise-002b01de7514",
+  "sk": "EVT#2026-09-29T14:47:18Z#evt-26db40bda94f",
+  "policyDecision": null,
+  "pk": "CASE#SR-AB399E0FBA",
+  "actor": {
+   "type": "SYSTEM",
+   "name": "CaseOpener"
+  },
+  "type": "CASE_OPENED"
+ },
+ {
+  "detail": {
+   "expectedTools": [
+    "getAssetContext",
+    "getServiceHistory"
+   ],
+   "specialist": "AssetContextAgent",
+   "outcome": {
+    "summary": "## Task Outcome\n\nI attempted to assemble the customer/asset/contract context for asset \"CHILLER-8821\" but encountered the following results:\n\n**Asset Context**: The system returned a \"NOT_FOUND\" error with the message \"Unknown assetId CHILLER-8821\". This indicates that the asset ID provided in the case context is not recognized in the system database.\n\n**Service History**: The service history query was successful but returned an empty list of work orders, indicating no prior service history exists for this asset ID.\n\n**Summary**: The context assembly was partially unsuccessful due to the asset not being found in the system. While I was able to retrieve service history (which shows no previous work orders), the primary asset context including customer details, site information, and contract details could not be obtained because the asset ID \"CHILLER-8821\" is not recognized in the system.\n\nThis suggests there may be an issue with:\n- The asset ID format or spelling\n- Asset registration in the system\n- Data synchronization between the case management system and asset database\n"
+   }
+  },
+  "summary": "Delegated to AssetContextAgent: Assemble customer/asset/contract context before anything else.",
+  "toolName": null,
+  "correlationId": "evt-sitewise-002b01de7514",
+  "sk": "EVT#2026-09-29T14:47:30Z#evt-1860f29eedc0",
+  "policyDecision": null,
+  "pk": "CASE#SR-AB399E0FBA",
+  "actor": {
+   "type": "AGENT",
+   "name": "ServiceResolutionOrchestrator"
+  },
+  "type": "SPECIALIST_DELEGATED"
+ },
+ {
+  "summary": "OPEN -> CONTEXT_READY (New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).)",
+  "detail": {
+   "from": "OPEN",
+   "reason": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+   "to": "CONTEXT_READY"
+  },
+  "toolName": null,
+  "correlationId": "evt-sitewise-002b01de7514",
+  "sk": "EVT#2026-09-29T14:47:30Z#evt-4f6af4c52bca",
+  "policyDecision": null,
+  "pk": "CASE#SR-AB399E0FBA",
+  "actor": {
+   "name": "ServiceResolutionOrchestrator",
+   "type": "AGENT",
+   "promptVersion": "orchestrator.v1.md"
+  },
+  "type": "CASE_STATE_CHANGED"
+ },
+ {
+  "gsi2sk": "2026-09-29T14:47:18Z",
+  "version": 2,
+  "gsi1sk": "P4#2026-09-29T14:47:18Z",
+  "closedAt": null,
+  "createdAt": "2026-09-29T14:47:18Z",
+  "priority": null,
+  "restoreBy": null,
+  "caseId": "SR-AB399E0FBA",
+  "state": "CONTEXT_READY",
+  "assetId": "CHILLER-8821",
+  "correlationId": "evt-sitewise-002b01de7514",
+  "sk": "META",
+  "pk": "CASE#SR-AB399E0FBA",
+  "gsi1pk": "STATE#CONTEXT_READY",
+  "customerId": "UNKNOWN",
+  "gsi2pk": "ASSET#CHILLER-8821"
+ },
+ {
+  "sk": "PLAN#v1",
+  "rationale": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+  "promptVersion": "rule-based-v1",
+  "goals": [
+   {
+    "expectedTools": [
+     "getAssetContext",
+     "getServiceHistory"
+    ],
+    "rationale": "Assemble customer/asset/contract context before anything else.",
+    "specialist": "AssetContextAgent"
+   }
+  ],
+  "pk": "CASE#SR-AB399E0FBA"
+ },
+ {
+  "detail": {
+   "trigger": {
+    "eventId": "evt-test-assetfix-0001",
+    "name": null,
+    "type": "TELEMETRY"
+   }
+  },
+  "summary": "Case opened",
+  "toolName": null,
+  "correlationId": "evt-test-assetfix-0001",
+  "sk": "EVT#2026-09-30T07:19:03Z#evt-f4d9026b9521",
+  "policyDecision": null,
+  "pk": "CASE#SR-B869D97F45",
+  "actor": {
+   "type": "SYSTEM",
+   "name": "CaseOpener"
+  },
+  "type": "CASE_OPENED"
+ },
+ {
+  "summary": "OPEN -> CONTEXT_READY (New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).)",
+  "detail": {
+   "to": "CONTEXT_READY",
+   "reason": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+   "from": "OPEN"
+  },
+  "toolName": null,
+  "correlationId": "evt-test-assetfix-0001",
+  "sk": "EVT#2026-09-30T07:19:20Z#evt-45fa0aad56de",
+  "policyDecision": null,
+  "pk": "CASE#SR-B869D97F45",
+  "actor": {
+   "name": "ServiceResolutionOrchestrator",
+   "promptVersion": "orchestrator.v1.md",
+   "type": "AGENT"
+  },
+  "type": "CASE_STATE_CHANGED"
+ },
+ {
+  "detail": {
+   "specialist": "AssetContextAgent",
+   "expectedTools": [
+    "getAssetContext",
+    "getServiceHistory"
+   ],
+   "outcome": {
+    "summary": "## Customer/Asset/Contract Context Successfully Assembled\n\nI have successfully retrieved the complete context for case SR-B869D97F45. Here's the assembled information:\n\n### Asset Details\n- **Asset ID**: CHILLER-8821\n- **Model**: CX-500\n- **Serial Number**: CX5-22-08821\n- **Install Date**: March 14, 2022\n- **Firmware Version**: 4.2.1\n- **Criticality**: HIGH\n- **Available Safe Actions**: Controller soft reset, recalibrate sensor, set eco mode\n\n### Customer Information\n- **Customer**: Meridian Foods (CUST-1042)\n- **Segment**: Food manufacturing\n- **Region**: SOUTH\n- **Account Manager**: OEM-AM-07\n\n### Site Details\n- **Site**: Plant A (PLANT-A)\n- **Address**: 12 Industrial Estate Road, Sector 4\n- **Location**: 13.0827°N, 80.2707°E (Asia/Kolkata timezone)\n- **Access Notes**: Gate 2; PPE mandatory; report to maintenance office\n\n### Contract Information\n- **Contract ID**: CTR-5510\n- **SLA Tier**: GOLD_4H (4-hour restore time)\n- **Coverage**: Parts and labor included\n- **Auto-approve Parts**: Up to $500 USD\n- **Warranty**: Valid until March 13, 2027\n- **Covered Assets**: CHILLER-8821, CHILLER-8822, AHU-9011\n\n### Key Contacts\n- **Primary Contact**: Anita Rao (Maintenance Manager) - prefers RCS communication\n- **Plant Manager**: Vikram Shah - prefers SMS, notified on P1 incidents\n- **Finance Contact**: Farah Ali - prefers email\n\n### Service History\nThe asset currently has no prior work orders on record, indicating this may be the first service incident for this chiller since installation.\n\nThe context is now fully assembled and ready for use in case resolution activities.\n"
+   }
+  },
+  "summary": "Delegated to AssetContextAgent: Assemble customer/asset/contract context before anything else.",
+  "toolName": null,
+  "correlationId": "evt-test-assetfix-0001",
+  "sk": "EVT#2026-09-30T07:19:20Z#evt-f0a1fbc7fe94",
+  "policyDecision": null,
+  "pk": "CASE#SR-B869D97F45",
+  "actor": {
+   "name": "ServiceResolutionOrchestrator",
+   "type": "AGENT"
+  },
+  "type": "SPECIALIST_DELEGATED"
+ },
+ {
+  "gsi2sk": "2026-09-30T07:19:03Z",
+  "version": 2,
+  "gsi1sk": "P4#2026-09-30T07:19:03Z",
+  "closedAt": null,
+  "createdAt": "2026-09-30T07:19:03Z",
+  "priority": null,
+  "restoreBy": null,
+  "caseId": "SR-B869D97F45",
+  "state": "CONTEXT_READY",
+  "assetId": "CHILLER-8821",
+  "correlationId": "evt-test-assetfix-0001",
+  "sk": "META",
+  "pk": "CASE#SR-B869D97F45",
+  "gsi1pk": "STATE#CONTEXT_READY",
+  "customerId": "UNKNOWN",
+  "gsi2pk": "ASSET#CHILLER-8821"
+ },
+ {
+  "sk": "PLAN#v1",
+  "rationale": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+  "promptVersion": "rule-based-v1",
+  "goals": [
+   {
+    "specialist": "AssetContextAgent",
+    "expectedTools": [
+     "getAssetContext",
+     "getServiceHistory"
+    ],
+    "rationale": "Assemble customer/asset/contract context before anything else."
+   }
+  ],
+  "pk": "CASE#SR-B869D97F45"
+ },
+ {
+  "summary": "Case opened",
+  "detail": {
+   "trigger": {
+    "type": "TELEMETRY",
+    "name": null,
+    "eventId": "evt-sitewise-019bfbdaf56e"
+   }
+  },
+  "toolName": null,
+  "correlationId": "evt-sitewise-019bfbdaf56e",
+  "sk": "EVT#2026-09-29T14:52:10Z#evt-4d79d0b48879",
+  "policyDecision": null,
+  "pk": "CASE#SR-BB04413006",
+  "actor": {
+   "type": "SYSTEM",
+   "name": "CaseOpener"
+  },
+  "type": "CASE_OPENED"
+ },
+ {
+  "detail": {
+   "expectedTools": [
+    "getAssetContext",
+    "getServiceHistory"
+   ],
+   "specialist": "AssetContextAgent",
+   "outcome": {
+    "summary": "## Context Assembly Results\n\nI've attempted to assemble the customer/asset/contract context for asset CHILLER-8821 in case SR-BB04413006, but encountered the same issue as before:\n\n### Asset Context\n- **Status**: Failed to retrieve\n- **Error**: Asset ID \"CHILLER-8821\" was not found in the system\n- **Error Code**: NOT_FOUND (non-retryable)\n- **Correlation ID**: evt-sitewise-019bfbdaf56e\n\n### Service History\n- **Status**: Successfully retrieved\n- **Asset ID**: CHILLER-8821\n- **Work Orders**: No prior work orders found (empty history)\n\n## Outcome\nThe context assembly failed for the same reason as the previous case. The asset ID \"CHILLER-8821\" is consistently not found in the asset management system across multiple cases. This suggests a systemic issue where:\n\n1. The asset ID may be incorrect or outdated\n2. There may be a data synchronization issue between the telemetry system generating these cases and the asset management database\n3. The asset may have been recently decommissioned or moved\n\nWithout valid asset context, I cannot provide:\n- Customer information\n- Site details and location\n- Asset specifications and configuration\n- Contract and entitlement details\n- Maintenance history\n\nThis issue needs to be escalated to resolve the asset ID discrepancy before case processing can continue effectively.\n"
+   }
+  },
+  "summary": "Delegated to AssetContextAgent: Assemble customer/asset/contract context before anything else.",
+  "toolName": null,
+  "correlationId": "evt-sitewise-019bfbdaf56e",
+  "sk": "EVT#2026-09-29T14:52:16Z#evt-0de70b60ab23",
+  "policyDecision": null,
+  "pk": "CASE#SR-BB04413006",
+  "actor": {
+   "type": "AGENT",
+   "name": "ServiceResolutionOrchestrator"
+  },
+  "type": "SPECIALIST_DELEGATED"
+ },
+ {
+  "summary": "OPEN -> CONTEXT_READY (New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).)",
+  "detail": {
+   "reason": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+   "from": "OPEN",
+   "to": "CONTEXT_READY"
+  },
+  "toolName": null,
+  "correlationId": "evt-sitewise-019bfbdaf56e",
+  "sk": "EVT#2026-09-29T14:52:16Z#evt-6acd95fac41d",
+  "policyDecision": null,
+  "pk": "CASE#SR-BB04413006",
+  "actor": {
+   "promptVersion": "orchestrator.v1.md",
+   "name": "ServiceResolutionOrchestrator",
+   "type": "AGENT"
+  },
+  "type": "CASE_STATE_CHANGED"
+ },
+ {
+  "gsi2sk": "2026-09-29T14:52:10Z",
+  "version": 2,
+  "gsi1sk": "P4#2026-09-29T14:52:10Z",
+  "closedAt": null,
+  "createdAt": "2026-09-29T14:52:10Z",
+  "priority": null,
+  "restoreBy": null,
+  "caseId": "SR-BB04413006",
+  "state": "CONTEXT_READY",
+  "assetId": "CHILLER-8821",
+  "correlationId": "evt-sitewise-019bfbdaf56e",
+  "sk": "META",
+  "pk": "CASE#SR-BB04413006",
+  "gsi1pk": "STATE#CONTEXT_READY",
+  "customerId": "UNKNOWN",
+  "gsi2pk": "ASSET#CHILLER-8821"
+ },
+ {
+  "sk": "PLAN#v1",
+  "rationale": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+  "promptVersion": "rule-based-v1",
+  "goals": [
+   {
+    "expectedTools": [
+     "getAssetContext",
+     "getServiceHistory"
+    ],
+    "specialist": "AssetContextAgent",
+    "rationale": "Assemble customer/asset/contract context before anything else."
+   }
+  ],
+  "pk": "CASE#SR-BB04413006"
+ },
+ {
+  "summary": "Case opened",
+  "detail": {
+   "trigger": {
+    "eventId": "evt-sitewise-58b9c5d22432",
+    "type": "TELEMETRY",
+    "name": null
+   }
+  },
+  "toolName": null,
+  "correlationId": "evt-sitewise-58b9c5d22432",
+  "sk": "EVT#2026-09-29T14:47:18Z#evt-9a9f6bbc5f47",
+  "policyDecision": null,
+  "pk": "CASE#SR-FE7018E586",
+  "actor": {
+   "type": "SYSTEM",
+   "name": "CaseOpener"
+  },
+  "type": "CASE_OPENED"
+ },
+ {
+  "detail": {
+   "from": "OPEN",
+   "to": "CONTEXT_READY",
+   "reason": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY)."
+  },
+  "summary": "OPEN -> CONTEXT_READY (New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).)",
+  "toolName": null,
+  "correlationId": "evt-sitewise-58b9c5d22432",
+  "sk": "EVT#2026-09-29T14:47:33Z#evt-6c626485eb6f",
+  "policyDecision": null,
+  "pk": "CASE#SR-FE7018E586",
+  "actor": {
+   "name": "ServiceResolutionOrchestrator",
+   "type": "AGENT",
+   "promptVersion": "orchestrator.v1.md"
+  },
+  "type": "CASE_STATE_CHANGED"
+ },
+ {
+  "detail": {
+   "specialist": "AssetContextAgent",
+   "expectedTools": [
+    "getAssetContext",
+    "getServiceHistory"
+   ],
+   "outcome": {
+    "summary": "## Context Assembly Results\n\nI've attempted to assemble the customer/asset/contract context for asset CHILLER-8821, but encountered the following results:\n\n### Asset Context\n- **Status**: Failed to retrieve\n- **Error**: Asset ID \"CHILLER-8821\" was not found in the system\n- **Error Code**: NOT_FOUND (non-retryable)\n\n### Service History\n- **Status**: Successfully retrieved\n- **Asset ID**: CHILLER-8821\n- **Work Orders**: No prior work orders found (empty history)\n\n## Outcome\nThe context assembly was only partially successful. While I was able to query the service history (which returned empty results), the primary asset context retrieval failed because the asset ID \"CHILLER-8821\" is unknown in the system. This means I cannot provide customer information, site details, asset specifications, or contract information for this case.\n\nThe case appears to reference an asset that either:\n1. Does not exist in the asset management system\n2. Has been decommissioned or removed\n3. May have a different asset identifier\n\nThis will need to be resolved before proceeding with case diagnosis and resolution planning.\n"
+   }
+  },
+  "summary": "Delegated to AssetContextAgent: Assemble customer/asset/contract context before anything else.",
+  "toolName": null,
+  "correlationId": "evt-sitewise-58b9c5d22432",
+  "sk": "EVT#2026-09-29T14:47:33Z#evt-746320893e64",
+  "policyDecision": null,
+  "pk": "CASE#SR-FE7018E586",
+  "actor": {
+   "name": "ServiceResolutionOrchestrator",
+   "type": "AGENT"
+  },
+  "type": "SPECIALIST_DELEGATED"
+ },
+ {
+  "gsi2sk": "2026-09-29T14:47:18Z",
+  "version": 2,
+  "gsi1sk": "P4#2026-09-29T14:47:18Z",
+  "closedAt": null,
+  "createdAt": "2026-09-29T14:47:18Z",
+  "priority": null,
+  "restoreBy": null,
+  "caseId": "SR-FE7018E586",
+  "state": "CONTEXT_READY",
+  "assetId": "CHILLER-8821",
+  "correlationId": "evt-sitewise-58b9c5d22432",
+  "sk": "META",
+  "pk": "CASE#SR-FE7018E586",
+  "gsi1pk": "STATE#CONTEXT_READY",
+  "customerId": "UNKNOWN",
+  "gsi2pk": "ASSET#CHILLER-8821"
+ },
+ {
+  "sk": "PLAN#v1",
+  "rationale": "New case: assemble context (Section 8.2 OPEN -> CONTEXT_READY).",
+  "promptVersion": "rule-based-v1",
+  "goals": [
+   {
+    "rationale": "Assemble customer/asset/contract context before anything else.",
+    "expectedTools": [
+     "getAssetContext",
+     "getServiceHistory"
+    ],
+    "specialist": "AssetContextAgent"
+   }
+  ],
+  "pk": "CASE#SR-FE7018E586"
+ }
+]

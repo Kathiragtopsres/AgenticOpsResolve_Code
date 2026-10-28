@@ -1,0 +1,137 @@
+[
+  {
+    "assetId": "ONT-55012",
+    "siteId": "PREM-2201",
+    "model": "ONT-X200",
+    "serial": "ONTX-55012",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ONT_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "ONT-X200 fibre ONT",
+    "installDate": "2024-02-10",
+    "lastServiceDate": "2024-02-10",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "RTR-55013",
+    "siteId": "PREM-2201",
+    "model": "HGW-7",
+    "serial": "HGW7-55013",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ROUTER_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "HGW-7 home gateway",
+    "installDate": "2024-02-10",
+    "lastServiceDate": "2024-02-10",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "ONT-55021",
+    "siteId": "PREM-2202",
+    "model": "ONT-X200",
+    "serial": "ONTX-55021",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ONT_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "ONT-X200 fibre ONT",
+    "installDate": "2025-03-18",
+    "lastServiceDate": "2025-03-18",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "RTR-55022",
+    "siteId": "PREM-2202",
+    "model": "HGW-7",
+    "serial": "HGW7-55022",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ROUTER_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "HGW-7 home gateway",
+    "installDate": "2025-03-18",
+    "lastServiceDate": "2025-03-18",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "ONT-55031",
+    "siteId": "PREM-2203",
+    "model": "ONT-X200",
+    "serial": "ONTX-55031",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ONT_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "ONT-X200 fibre ONT",
+    "installDate": "2025-03-18",
+    "lastServiceDate": "2025-03-18",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "ONT-55041",
+    "siteId": "PREM-2204",
+    "model": "ONT-X200",
+    "serial": "ONTX-55041",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ONT_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "ONT-X200 fibre ONT",
+    "installDate": "2025-03-18",
+    "lastServiceDate": "2025-03-18",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "RTR-55042",
+    "siteId": "PREM-2204",
+    "model": "HGW-7",
+    "serial": "HGW7-55042",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ROUTER_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "HGW-7 home gateway",
+    "installDate": "2025-03-18",
+    "lastServiceDate": "2025-03-18",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "ONT-55051",
+    "siteId": "PREM-2205",
+    "model": "ONT-X200",
+    "serial": "ONTX-55051",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ONT_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "ONT-X200 fibre ONT",
+    "installDate": "2025-03-18",
+    "lastServiceDate": "2025-03-18",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "assetId": "RTR-55052",
+    "siteId": "PREM-2205",
+    "model": "HGW-7",
+    "serial": "HGW7-55052",
+    "customerReplaceable": true,
+    "safeActions": [
+      "ROUTER_REBOOT",
+      "WIFI_CHANNEL_OPTIMISE"
+    ],
+    "displayName": "HGW-7 home gateway",
+    "installDate": "2025-03-18",
+    "lastServiceDate": "2025-03-18",
+    "tenantId": "meravix-broadband"
+  }
+]

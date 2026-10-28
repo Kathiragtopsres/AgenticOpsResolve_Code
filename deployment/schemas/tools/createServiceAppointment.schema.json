@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "createServiceAppointment",
+  "x-opsresolve-kind": "write",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "slotId": {
+        "type": "string"
+      },
+      "technicianId": {
+        "type": "string"
+      },
+      "consentRef": {
+        "type": "string"
+      },
+      "idempotencyKey": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "caseId",
+      "slotId",
+      "technicianId",
+      "consentRef",
+      "idempotencyKey"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "workOrderId": {
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "BOOKED",
+          "REJECTED"
+        ]
+      },
+      "slotStart": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "slotEnd": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  }
+}

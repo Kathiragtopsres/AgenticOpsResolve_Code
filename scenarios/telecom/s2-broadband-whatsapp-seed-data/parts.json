@@ -1,0 +1,12 @@
+[
+  {
+    "partId": "ONT-X200",
+    "name": "Fibre ONT X200",
+    "unitValueUsd": 85,
+    "compatibleModels": [
+      "ONT-X200"
+    ],
+    "customerReplaceable": true,
+    "tenantId": "meravix-broadband"
+  }
+]

@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowSocialMessagingPublish",
+            "Effect": "Allow",
+            "Principal": {"Service": "social-messaging.amazonaws.com"},
+            "Action": "sns:Publish",
+            "Resource": "arn:aws:sns:us-east-1:[AWS-ACCOUNT-NUMBER]:opsresolve-dev-whatsapp-events",
+            "Condition": {
+                "StringEquals": {"aws:SourceAccount": "[AWS-ACCOUNT-NUMBER]"},
+                "ArnLike": {"aws:SourceArn": "arn:aws:social-messaging:us-east-1:[AWS-ACCOUNT-NUMBER]:*"}
+            }
+        },
+        {
+            "Sid": "OwnerManage",
+            "Effect": "Allow",
+            "Principal": {"AWS": "arn:aws:iam::[AWS-ACCOUNT-NUMBER]:root"},
+            "Action": [
+                "sns:GetTopicAttributes", "sns:SetTopicAttributes", "sns:Subscribe", "sns:ListSubscriptionsByTopic",
+                "sns:DeleteTopic", "sns:Publish"
+            ],
+            "Resource": "arn:aws:sns:us-east-1:[AWS-ACCOUNT-NUMBER]:opsresolve-dev-whatsapp-events"
+        }
+    ]
+}

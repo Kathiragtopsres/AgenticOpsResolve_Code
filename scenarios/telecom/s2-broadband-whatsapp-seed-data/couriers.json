@@ -1,0 +1,9 @@
+[
+  {
+    "courierId": "CRR-01",
+    "name": "CityDash (mock)",
+    "sameDayCutoff": "15:00",
+    "etaMin": 150,
+    "tenantId": "meravix-broadband"
+  }
+]

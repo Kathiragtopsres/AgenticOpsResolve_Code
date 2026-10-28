@@ -1,0 +1,7 @@
+[
+  {
+    "name": "default",
+    "account": "[AWS-ACCOUNT-NUMBER]",
+    "region": "us-east-1"
+  }
+]

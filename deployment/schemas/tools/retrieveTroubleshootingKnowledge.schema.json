@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "retrieveTroubleshootingKnowledge",
+  "x-opsresolve-kind": "read",
+  "input": {
+    "type": "object",
+    "properties": {
+      "assetModel": {
+        "type": "string"
+      },
+      "symptom": {
+        "type": "string"
+      },
+      "firmware": {
+        "type": "string"
+      },
+      "topK": {
+        "type": "integer",
+        "maximum": 10
+      }
+    },
+    "required": [
+      "assetModel",
+      "symptom"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "results": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "chunkId": {
+              "type": "string"
+            },
+            "docTitle": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number"
+            },
+            "docStatus": {
+              "const": "ACTIVE"
+            }
+          }
+        }
+      }
+    }
+  }
+}

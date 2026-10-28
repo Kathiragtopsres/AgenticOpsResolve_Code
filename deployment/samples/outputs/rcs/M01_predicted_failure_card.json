@@ -1,0 +1,38 @@
+{
+  "_note": "RcsMessageContent for SendRcsMessage; validate field names against the current API reference before use.",
+  "Content": {
+    "RichCard": {
+      "CardOrientation": "VERTICAL",
+      "CardContent": {
+        "Title": "Your CX-500 chiller needs attention",
+        "Description": "CHILLER-8821 at Plant A shows rising compressor pressure. We predict a fault within about 6 hours. A visit is covered by your Gold SLA. Case SR-2026-000184.",
+        "Media": {
+          "FileUrl": "s3://opsresolve-demo-artifacts/media/trend-CHILLER-8821.png",
+          "Height": "MEDIUM"
+        },
+        "Suggestions": [
+          {
+            "Reply": {
+              "Text": "See options",
+              "PostbackData": "opsr1|SR-2026-000184|SHOW_OPTIONS|-|1792499400|x-|fe317187953a2481a04384ad70fcd524"
+            }
+          },
+          {
+            "DialPhone": {
+              "Text": "Call service desk",
+              "PostbackData": "opsr1|SR-2026-000184|CALL_DESK|-|...",
+              "PhoneNumber": "+18885550100"
+            }
+          },
+          {
+            "Reply": {
+              "Text": "Talk to a person",
+              "PostbackData": "opsr1|SR-2026-000184|HUMAN|-|1792499400|x-|78c569b934ce800887aa27f686a03d0d"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "_fallbackSms": "OpsResolve: CX-500 chiller at Plant A needs attention (case SR-2026-000184). Choose a visit time: https://opsr.example/c/184"
+}

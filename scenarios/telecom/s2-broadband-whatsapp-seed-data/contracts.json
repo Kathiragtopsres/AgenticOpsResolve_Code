@@ -1,0 +1,111 @@
+[
+  {
+    "contractId": "PLAN-FIBRE-500-BIZ",
+    "customerId": "CUST-2201",
+    "slaTier": "BIZ_NEXT_DAY",
+    "restoreHours": 24,
+    "businessHoursSupport": true,
+    "coverage": {
+      "hardware": true,
+      "courierReplacement": true
+    },
+    "serviceCredit": {
+      "perHourUsd": 5,
+      "autoApplyCapUsd": 50
+    },
+    "assetIds": [
+      "ONT-55012",
+      "RTR-55013"
+    ],
+    "planName": "Fibre 500 Business",
+    "endDate": "2027-01-31",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contractId": "PLAN-FIBRE-100-HOME-2202",
+    "customerId": "CUST-2202",
+    "planName": "Fibre 100 Home",
+    "slaTier": "HOME_NEXT_DAY",
+    "restoreHours": 48,
+    "businessHoursSupport": false,
+    "coverage": {
+      "hardware": true,
+      "courierReplacement": false
+    },
+    "serviceCredit": {
+      "perHourUsd": 5,
+      "autoApplyCapUsd": 50
+    },
+    "assetIds": [
+      "ONT-55021",
+      "RTR-55022"
+    ],
+    "endDate": "2027-01-31",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contractId": "PLAN-FIBRE-300-BIZ-2203",
+    "customerId": "CUST-2203",
+    "planName": "Fibre 300 Business",
+    "slaTier": "BIZ_NEXT_DAY",
+    "restoreHours": 24,
+    "businessHoursSupport": true,
+    "coverage": {
+      "hardware": true,
+      "courierReplacement": true
+    },
+    "serviceCredit": {
+      "perHourUsd": 5,
+      "autoApplyCapUsd": 50
+    },
+    "assetIds": [
+      "ONT-55031"
+    ],
+    "endDate": "2027-01-31",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contractId": "PLAN-FIBRE-100-HOME-2204",
+    "customerId": "CUST-2204",
+    "planName": "Fibre 100 Home",
+    "slaTier": "HOME_NEXT_DAY",
+    "restoreHours": 48,
+    "businessHoursSupport": false,
+    "coverage": {
+      "hardware": true,
+      "courierReplacement": true
+    },
+    "serviceCredit": {
+      "perHourUsd": 5,
+      "autoApplyCapUsd": 50
+    },
+    "assetIds": [
+      "ONT-55041",
+      "RTR-55042"
+    ],
+    "endDate": "2027-01-31",
+    "tenantId": "meravix-broadband"
+  },
+  {
+    "contractId": "PLAN-FIBRE-500-BIZ-2205",
+    "customerId": "CUST-2205",
+    "planName": "Fibre 500 Business",
+    "slaTier": "BIZ_NEXT_DAY",
+    "restoreHours": 24,
+    "businessHoursSupport": true,
+    "coverage": {
+      "hardware": true,
+      "courierReplacement": true
+    },
+    "serviceCredit": {
+      "perHourUsd": 5,
+      "autoApplyCapUsd": 50
+    },
+    "assetIds": [
+      "ONT-55051",
+      "RTR-55052"
+    ],
+    "endDate": "2027-01-31",
+    "tenantId": "meravix-broadband"
+  }
+]

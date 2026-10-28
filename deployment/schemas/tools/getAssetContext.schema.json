@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getAssetContext",
+  "x-opsresolve-kind": "read",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "assetId": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "assetId"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "asset": {
+        "type": "object"
+      },
+      "site": {
+        "type": "object"
+      },
+      "customer": {
+        "type": "object"
+      },
+      "contacts": {
+        "type": "array"
+      },
+      "contract": {
+        "type": "object"
+      },
+      "recentWorkOrders": {
+        "type": "array"
+      }
+    }
+  }
+}

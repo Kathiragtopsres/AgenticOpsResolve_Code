@@ -1,0 +1,129 @@
+{
+  "areaOutages": [],
+  "lineProfiles": {
+    "ONT-55012": {
+      "active": "flapping",
+      "profiles": {
+        "flapping": {
+          "opticalRxDbm": -27.9,
+          "fecErrorsPerMin": 820,
+          "resetsLast24h": 14,
+          "syncState": "FLAPPING"
+        },
+        "post_reboot_partial": {
+          "opticalRxDbm": -26.8,
+          "fecErrorsPerMin": 610,
+          "resetsLast24h": 15,
+          "syncState": "UP_UNSTABLE"
+        },
+        "post_swap_normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        }
+      }
+    },
+    "RTR-55013": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "syncState": "UP"
+        }
+      }
+    },
+    "ONT-55021": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        },
+        "post_swap_normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        }
+      }
+    },
+    "RTR-55022": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "syncState": "UP"
+        }
+      }
+    },
+    "ONT-55031": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        },
+        "post_swap_normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        }
+      }
+    },
+    "ONT-55041": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        },
+        "post_swap_normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        }
+      }
+    },
+    "RTR-55042": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "syncState": "UP"
+        }
+      }
+    },
+    "ONT-55051": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        },
+        "post_swap_normal": {
+          "opticalRxDbm": -18.2,
+          "fecErrorsPerMin": 0,
+          "resetsLast24h": 0,
+          "syncState": "UP"
+        }
+      }
+    },
+    "RTR-55052": {
+      "active": "normal",
+      "profiles": {
+        "normal": {
+          "syncState": "UP"
+        }
+      }
+    }
+  },
+  "tenantId": "meravix-broadband"
+}

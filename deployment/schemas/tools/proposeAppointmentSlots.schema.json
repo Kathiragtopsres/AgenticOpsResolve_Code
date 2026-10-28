@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "proposeAppointmentSlots",
+  "x-opsresolve-kind": "read",
+  "input": {
+    "type": "object",
+    "properties": {
+      "caseId": {
+        "type": "string"
+      },
+      "requiredSkill": {
+        "type": "string"
+      },
+      "assetModel": {
+        "type": "string"
+      },
+      "siteId": {
+        "type": "string"
+      },
+      "earliest": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "restoreBy": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "maxSlots": {
+        "type": "integer",
+        "maximum": 3
+      },
+      "blockedHours": {
+        "type": "array"
+      }
+    },
+    "required": [
+      "caseId",
+      "siteId",
+      "restoreBy"
+    ]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "slots": {
+        "type": "array",
+        "maxItems": 3
+      }
+    }
+  }
+}

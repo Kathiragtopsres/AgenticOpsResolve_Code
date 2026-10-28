@@ -1,0 +1,12 @@
+{
+  "error": {
+    "code": "NEEDS_APPROVAL",
+    "retryable": false,
+    "message": "Unit value 1240 exceeds auto-approve threshold 500",
+    "details": {
+      "partId": "CTRL-BRD-900",
+      "thresholdUsd": 500
+    },
+    "correlationId": "corr-8a9f2c1e"
+  }
+}

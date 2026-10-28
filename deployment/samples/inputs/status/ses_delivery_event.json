@@ -1,0 +1,22 @@
+{
+  "version": "0",
+  "source": "aws.ses",
+  "detail-type": "Email Delivered",
+  "detail": {
+    "eventType": "Delivery",
+    "mail": {
+      "messageId": "[ses-id]",
+      "destination": [
+        "anita.rao@meravixfoods.example"
+      ],
+      "tags": {
+        "caseId": [
+          "SR-2026-000184"
+        ],
+        "intent": [
+          "REPORT"
+        ]
+      }
+    }
+  }
+}
