@@ -177,12 +177,12 @@ Notes:
 
 7. Try out Links
 -------------------------------------------
-URL : https://d218ogvtgcettu.cloudfront.net/login
+Desktop App URL : Link Provided in the 'Tryout Link section' of the Hackathon submission.
 
 Username: John_doe
 Password: User#001
 
-Mobile App : https://d27znlpdhc4aq.cloudfront.net/
+Mobile App URL : Link Provided in the 'Tryout Link section' of the Hackathon submission.
 Username: ryan_kumar
 Password: User#001
 
